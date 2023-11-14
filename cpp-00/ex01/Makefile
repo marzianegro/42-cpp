@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: mnegro <marvin@42.fr>                      +#+  +:+       +#+         #
+#    By: marzianegro <marzianegro@student.42.fr>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/10/24 18:25:00 by mnegro            #+#    #+#              #
-#    Updated: 2023/10/24 18:34:09 by mnegro           ###   ########.fr        #
+#    Created: 2023/10/24 18:25:21 by mnegro            #+#    #+#              #
+#    Updated: 2023/11/14 15:06:23 by marzianegro      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,14 +17,14 @@
 .SILENT:
 
 ### VARIABLES (DEFINITION) ###
-NAME = megaphone
+NAME = phonebook
 
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 RM = rm -f
 
 #### TARGETS ####
-SRCS = megaphone.cpp
+SRCS =
 
 OBJS = ${SRCS:.cpp=.o}
 
