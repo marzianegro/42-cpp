@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   contact.class.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marzianegro <marzianegro@student.42.fr>    +#+  +:+       +#+        */
+/*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/14 14:54:30 by marzianegro       #+#    #+#             */
-/*   Updated: 2023/11/14 14:58:01 by marzianegro      ###   ########.fr       */
+/*   Created: 2023/11/14 14:54:30 by mnegro            #+#    #+#             */
+/*   Updated: 2023/11/21 13:10:15 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,13 @@ public:
 	~Contact(void);
 
 private:
+
+	int			_index;
+	std::string	_firstName;
+	std::string	_lastName;
+	std::string	_nickName;
+	std::string	_phoneNumber;
+	std::string	_darkestSecret;
 
 };
 

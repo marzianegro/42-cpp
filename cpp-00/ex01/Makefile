@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: marzianegro <marzianegro@student.42.fr>    +#+  +:+       +#+         #
+#    By: mnegro <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/24 18:25:21 by mnegro            #+#    #+#              #
-#    Updated: 2023/11/14 15:06:23 by marzianegro      ###   ########.fr        #
+#    Updated: 2023/11/21 13:10:27 by mnegro           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,14 +17,14 @@
 .SILENT:
 
 ### VARIABLES (DEFINITION) ###
-NAME = phonebook
+NAME = crappy
 
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 RM = rm -f
 
 #### TARGETS ####
-SRCS =
+SRCS = contact.class.cpp main.cpp phonebook.class.cpp
 
 OBJS = ${SRCS:.cpp=.o}
 
