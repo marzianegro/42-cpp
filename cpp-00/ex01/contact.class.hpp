@@ -6,7 +6,7 @@
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 14:54:30 by mnegro            #+#    #+#             */
-/*   Updated: 2023/11/21 13:10:15 by mnegro           ###   ########.fr       */
+/*   Updated: 2023/12/03 19:10:16 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,19 @@ public:
 
 	Contact(void);
 	~Contact(void);
+	int	getIndex(void) const;
+	std::string	getFirstName(void) const;
+	std::string	getLastName(void) const;
+	std::string	getNickName(void) const;
+	std::string	getPhoneNumber(void) const;
+	std::string	getDarkestSecret(void) const;
+	void	setIndex(int index);
+	void	setFirstName(std::string info);
+	void	setLastName(std::string info);
+	void	setNickName(std::string info);
+	void	setPhoneNumber(std::string info);
+	void	setDarkestSecret(std::string info);
+	void	printContact(void) const;
 
 private:
 
@@ -28,7 +41,6 @@ private:
 	std::string	_nickName;
 	std::string	_phoneNumber;
 	std::string	_darkestSecret;
-
 };
 
 #endif
