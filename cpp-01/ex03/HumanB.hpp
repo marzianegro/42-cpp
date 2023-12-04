@@ -6,7 +6,7 @@
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 15:41:58 by mnegro            #+#    #+#             */
-/*   Updated: 2023/12/04 16:26:06 by mnegro           ###   ########.fr       */
+/*   Updated: 2023/12/04 19:11:31 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ public:
 	HumanB(std::string name);
 	~HumanB();
 	void	attack(void) const;
-	void	setWeapon(Weapon weapon);
+	void	setWeapon(Weapon& weapon);
 
 private:
-	Weapon	_weapon;
+	Weapon*	_weapon;
 	std::string	_name;
 
 };

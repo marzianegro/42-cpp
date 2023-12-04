@@ -6,7 +6,7 @@
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 15:41:41 by mnegro            #+#    #+#             */
-/*   Updated: 2023/12/04 16:31:32 by mnegro           ###   ########.fr       */
+/*   Updated: 2023/12/04 19:11:32 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ public:
 	void	attack(void) const;
 
 private:
-	Weapon&	_weapon;
+	Weapon& _weapon;
 	std::string	_name;
 
 };

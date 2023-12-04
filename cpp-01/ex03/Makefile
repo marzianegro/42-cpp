@@ -6,7 +6,7 @@
 #    By: mnegro <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/24 18:25:00 by mnegro            #+#    #+#              #
-#    Updated: 2023/12/04 15:41:13 by mnegro           ###   ########.fr        #
+#    Updated: 2023/12/04 19:11:30 by mnegro           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ CFLAGS = -Wall -Wextra -Werror -std=c++98
 RM = rm -f
 
 #### TARGETS ####
-SRCS = main.cpp
+SRCS = main.cpp HumanA.cpp HumanB.cpp Weapon.cpp
 
 OBJS = ${SRCS:.cpp=.o}
 
