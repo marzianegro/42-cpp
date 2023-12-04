@@ -6,7 +6,7 @@
 #    By: mnegro <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/24 18:25:31 by mnegro            #+#    #+#              #
-#    Updated: 2023/11/21 13:10:59 by mnegro           ###   ########.fr        #
+#    Updated: 2023/12/04 10:25:39 by mnegro           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,14 +17,15 @@
 .SILENT:
 
 ### VARIABLES (DEFINITION) ###
-NAME =
+### The Job Of Your Dreams ###
+NAME = tjoyd
 
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 RM = rm -f
 
 #### TARGETS ####
-SRCS = Account.cpp
+SRCS = Account.cpp tests.cpp
 
 OBJS = ${SRCS:.cpp=.o}
 
