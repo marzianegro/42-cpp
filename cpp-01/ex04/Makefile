@@ -6,7 +6,7 @@
 #    By: mnegro <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/24 18:25:00 by mnegro            #+#    #+#              #
-#    Updated: 2023/12/04 16:32:46 by mnegro           ###   ########.fr        #
+#    Updated: 2023/12/05 11:01:41 by mnegro           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,10 +17,10 @@
 .SILENT:
 
 ### VARIABLES (DEFINITION) ###
-NAME = sed
+NAME = replace
 
 CC = c++
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+CFLAGS = -Wall -Wextra -Werror -g -std=c++98
 RM = rm -f
 
 #### TARGETS ####
@@ -44,7 +44,7 @@ clean:
 	@echo "Rule '${GREEN}clean${DEF_COLOR}' for ${NAME} executed successfully!"
 
 fclean:
-	${RM} ${OBJS} ${NAME}
+	${RM} ${OBJS} ${NAME} text.replace
 	@echo "Rule '${GREEN}fclean${DEF_COLOR}' for ${NAME} executed successfully!"
 
 re:	fclean all
