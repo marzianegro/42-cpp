@@ -6,7 +6,7 @@
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 16:33:51 by mnegro            #+#    #+#             */
-/*   Updated: 2023/12/06 16:42:36 by mnegro           ###   ########.fr       */
+/*   Updated: 2023/12/06 19:31:08 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,14 +30,13 @@ void	Harl::complain(std::string level) {
 	MemFn		complaintFn[4] = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
 	std::string	complaintLvl[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 
-	std::map<std::string, MemFn> complaintMap;
 	for (int i = 0; i < 4; i++) {
-		complaintMap[complaintLvl[i]] = complaintFn[i];
+		if (level.compare(complaintLvl[i]) == 0) {
+			(this->*complaintFn[i])();
+			return ;
+		}
 	}
-	if (complaintMap.count(level))
-		(this->*complaintMap[level])();
-	else
-		std::cerr << "[ Probably complaining about insignificant problems ]" << std::endl;
+	std::cerr << "[ Probably complaining about insignificant problems ]" << std::endl;
 }
 
 void	Harl::debug(void) const {

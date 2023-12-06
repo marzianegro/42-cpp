@@ -6,7 +6,7 @@
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 16:33:44 by mnegro            #+#    #+#             */
-/*   Updated: 2023/12/06 16:43:08 by mnegro           ###   ########.fr       */
+/*   Updated: 2023/12/06 19:31:06 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ private:
 	void	warning(void) const;
 	void	error(void) const ;
 	typedef	void	(Harl::*MemFn)() const;
-	typedef	// help
 };
 
 #endif
