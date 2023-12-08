@@ -6,7 +6,7 @@
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 16:32:54 by mnegro            #+#    #+#             */
-/*   Updated: 2023/12/05 11:11:46 by mnegro           ###   ########.fr       */
+/*   Updated: 2023/12/07 13:24:17 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,12 @@
 bool	checkArgs(int ac, char **av)
 {
 	if (ac != 4) {
-		std::cerr << "Error: invalid number of arguments" << std::endl;
+		std::cout << "Error: invalid number of arguments" << std::endl;
 		return (false);
 	}
 	std::ifstream	file(av[1]);
 	if (!file.is_open()) {
-		std::cerr << "Error: " << av[1] << " can't be opened" << std::endl;
+		std::cout << "Error: " << av[1] << " can't be opened" << std::endl;
 		return (false);
 	}
 	file.close();
@@ -56,7 +56,7 @@ int	main(int ac, char **av)
 	std::ifstream	infile(infile_name);
 	std::ofstream	outfile(outfile_name);
 	if (!outfile.is_open()) {
-        std::cerr << "Error: can't create file." << std::endl;
+        std::cout << "Error: can't create file." << std::endl;
         return (1);
 	}
 	std::string	line;

@@ -5,21 +5,28 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/04 16:33:38 by mnegro            #+#    #+#             */
-/*   Updated: 2023/12/07 13:24:18 by mnegro           ###   ########.fr       */
+/*   Created: 2023/12/07 11:15:41 by mnegro            #+#    #+#             */
+/*   Updated: 2023/12/08 18:48:28 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Harl.hpp"
+#include "Fixed.hpp"
 
-int	main(int ac, char **av)
+int	main(void)
 {
-	Harl	harl;
+	Fixed	a;
+	Fixed const	b(10);
+	Fixed const	c(42.42f);
+	Fixed const	d(b);
 
-	if (ac < 2) {
-		std::cout << "Harl, why aren't you saying anything...???" << std::endl;
-		return (1);
-	}
-	harl.complain(av[1]);
+	a = Fixed(1234.4321f);
+	std::cout << "a is " << a << std::endl;
+	std::cout << "b is " << b << std::endl;
+	std::cout << "c is " << c << std::endl;
+	std::cout << "d is " << d << std::endl;
+	std::cout << "a is " << a.toInt() << " as integer" << std::endl;
+	std::cout << "b is " << b.toInt() << " as integer" << std::endl;
+	std::cout << "c is " << c.toInt() << " as integer" << std::endl;
+	std::cout << "d is " << d.toInt() << " as integer" << std::endl;
 	return (0);
 }

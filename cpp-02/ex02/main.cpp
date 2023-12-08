@@ -5,21 +5,27 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/04 16:33:38 by mnegro            #+#    #+#             */
-/*   Updated: 2023/12/07 13:24:18 by mnegro           ###   ########.fr       */
+/*   Created: 2023/12/08 18:55:14 by mnegro            #+#    #+#             */
+/*   Updated: 2023/12/08 21:02:53 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Harl.hpp"
+#include "Fixed.hpp"
 
-int	main(int ac, char **av)
+int	main(void)
 {
-	Harl	harl;
+	Fixed	a;
+	Fixed const	b(Fixed(5.05f) * Fixed(2));
 
-	if (ac < 2) {
-		std::cout << "Harl, why aren't you saying anything...???" << std::endl;
-		return (1);
-	}
-	harl.complain(av[1]);
+	std::cout << "Operation(s) on a: " << std::endl;
+	std::cout << a << std::endl;
+	std::cout << ++a << std::endl;
+	std::cout << a << std::endl;
+	std::cout << a++ << std::endl;
+	std::cout << a << std::endl << std::endl;
+	std::cout << "Operation(s) on b: " << std::endl;
+	std::cout << b << std::endl << std::endl;
+	std::cout << "Comparison(s) between a and b: " << std::endl;
+	std::cout << Fixed::max(a, b) << std::endl;
 	return (0);
 }

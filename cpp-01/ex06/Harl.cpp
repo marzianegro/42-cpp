@@ -6,7 +6,7 @@
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 16:33:51 by mnegro            #+#    #+#             */
-/*   Updated: 2023/12/06 20:05:09 by mnegro           ###   ########.fr       */
+/*   Updated: 2023/12/07 13:24:27 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	Harl::complain(std::string level) {
 			(this->*complaintFn[3])();
 			break ;
 		default:
-			std::cerr << "[ Probably complaining about insignificant problems ]" << std::endl;
+			std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
 	}
 }
 

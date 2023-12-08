@@ -6,7 +6,7 @@
 #    By: mnegro <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/24 18:25:00 by mnegro            #+#    #+#              #
-#    Updated: 2023/12/07 11:10:26 by mnegro           ###   ########.fr        #
+#    Updated: 2023/12/07 13:22:44 by mnegro           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@
 .SILENT:
 
 ### VARIABLES (DEFINITION) ###
-NAME =
+NAME = fixed
 
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98

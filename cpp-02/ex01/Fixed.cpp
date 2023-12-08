@@ -6,7 +6,7 @@
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 11:18:54 by mnegro            #+#    #+#             */
-/*   Updated: 2023/12/07 13:20:10 by mnegro           ###   ########.fr       */
+/*   Updated: 2023/12/08 20:21:37 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,16 @@ Fixed::Fixed(const Fixed &source) {
 	this->_fixedPoint = source._fixedPoint;
 }
 
-// copy assignment operator overload
+Fixed::Fixed(const int val) {
+	std::cout << "Int constructor called" << std::endl;
+	this->_fixedPoint = val << this->_FractBits;
+}
+
+Fixed::Fixed(const float val) {
+	std::cout << "Float constructor called" << std::endl;
+	this->_fixedPoint = roundf(val * (1 << this->_FractBits));
+}
+
 Fixed&	Fixed::operator=(const Fixed &source) {
 	std::cout << "Copy assignment operator called" << std::endl;
 	if (this != &source)
@@ -45,4 +54,17 @@ int	Fixed::getRawBits(void) const {
 // this functions sets the raw value of the fixed-point number
 void	Fixed::setRawBits(int const raw) {
 	this->_fixedPoint = raw;
+}
+
+float	Fixed::toFloat(void) const {
+	return (static_cast<float>(this->_fixedPoint) / (1 << this->_FractBits));
+}
+
+int	Fixed::toInt(void) const {
+	return (this->_fixedPoint >> this->_FractBits);
+}
+
+std::ostream& operator<<(std::ostream& os, const Fixed& obj) {
+    os << obj.toFloat();
+    return (os);
 }
