@@ -6,7 +6,7 @@
 #    By: mnegro <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/24 18:25:00 by mnegro            #+#    #+#              #
-#    Updated: 2023/12/06 16:07:45 by mnegro           ###   ########.fr        #
+#    Updated: 2023/12/08 21:05:38 by mnegro           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,14 +17,14 @@
 .SILENT:
 
 ### VARIABLES (DEFINITION) ###
-NAME = harlFilter
+NAME = BSP
 
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 RM = rm -f
 
 #### TARGETS ####
-SRCS = main.cpp Harl.cpp
+SRCS = main.cpp Fixed.cpp
 
 OBJS = ${SRCS:.cpp=.o}
 
