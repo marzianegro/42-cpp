@@ -6,7 +6,7 @@
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 11:10:43 by mnegro            #+#    #+#             */
-/*   Updated: 2023/12/08 20:47:41 by mnegro           ###   ########.fr       */
+/*   Updated: 2023/12/09 17:25:59 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,12 @@ class Fixed
 
 public:
 	Fixed();
-	Fixed(const Fixed	&source);
+	Fixed(const Fixed &source);
 	Fixed(const int val);
 	Fixed(const float val);
 	~Fixed();
  
-	Fixed& operator=(const Fixed	&source);
+	Fixed& operator=(const Fixed &source);
 	/*	For comparison operators and arithmetic operators it's more common
 		to return a copy of the result, not a reference. This is because
 		these operators usually do not modify the objects they are called

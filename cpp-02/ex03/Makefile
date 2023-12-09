@@ -6,7 +6,7 @@
 #    By: mnegro <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/24 18:25:00 by mnegro            #+#    #+#              #
-#    Updated: 2023/12/08 21:05:38 by mnegro           ###   ########.fr        #
+#    Updated: 2023/12/09 18:46:15 by mnegro           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ CFLAGS = -Wall -Wextra -Werror -std=c++98
 RM = rm -f
 
 #### TARGETS ####
-SRCS = main.cpp Fixed.cpp
+SRCS = bsp.cpp Fixed.cpp main.cpp Point.cpp
 
 OBJS = ${SRCS:.cpp=.o}
 
