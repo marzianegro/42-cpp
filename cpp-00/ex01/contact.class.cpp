@@ -6,11 +6,10 @@
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 14:58:27 by mnegro            #+#    #+#             */
-/*   Updated: 2023/12/03 19:49:53 by mnegro           ###   ########.fr       */
+/*   Updated: 2023/12/09 19:18:59 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
 #include "contact.class.hpp"
 
 Contact::Contact(void) {

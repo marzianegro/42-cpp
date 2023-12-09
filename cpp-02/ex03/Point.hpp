@@ -6,15 +6,15 @@
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 17:20:37 by mnegro            #+#    #+#             */
-/*   Updated: 2023/12/09 18:53:21 by mnegro           ###   ########.fr       */
+/*   Updated: 2023/12/09 19:23:06 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef POINT_HPP
 # define POINT_HPP
 
-#include <iostream>
 #include "Fixed.hpp"
+#include <iostream>
 
 class	Point {
 

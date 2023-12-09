@@ -6,12 +6,12 @@
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 16:32:54 by mnegro            #+#    #+#             */
-/*   Updated: 2023/12/07 13:24:17 by mnegro           ###   ########.fr       */
+/*   Updated: 2023/12/09 19:21:43 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
 #include <fstream>
+#include <iostream>
 
 bool	checkArgs(int ac, char **av)
 {

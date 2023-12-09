@@ -6,7 +6,7 @@
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 11:18:54 by mnegro            #+#    #+#             */
-/*   Updated: 2023/12/09 17:19:49 by mnegro           ###   ########.fr       */
+/*   Updated: 2023/12/09 19:32:15 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -144,7 +144,7 @@ const Fixed&	Fixed::max(const Fixed &val1, const Fixed &val2) {
 	return (val2);
 }
 
-std::ostream& operator<<(std::ostream& os, const Fixed& obj) {
+std::ostream& operator<<(std::ostream &os, const Fixed &obj) {
     os << obj.toFloat();
     return (os);
 }

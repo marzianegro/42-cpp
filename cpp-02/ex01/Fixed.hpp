@@ -6,17 +6,16 @@
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 11:10:43 by mnegro            #+#    #+#             */
-/*   Updated: 2023/12/08 20:21:37 by mnegro           ###   ########.fr       */
+/*   Updated: 2023/12/09 19:27:09 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FIXED_HPP
-#define FIXED_HPP
+# define FIXED_HPP
 
 #include <iostream>
 
-class Fixed
-{
+class Fixed {
 
 public:
 	Fixed();
@@ -39,6 +38,6 @@ private:
 
 /* Overload of the insertion operator that inserts a floating point representation
 of the fixed-point number into the output stream object passed as parameter */
-std::ostream& operator<<(std::ostream& os, const Fixed& obj);
+std::ostream& operator<<(std::ostream &os, const Fixed &obj);
 
 #endif

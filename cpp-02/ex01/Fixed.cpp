@@ -6,7 +6,7 @@
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 11:18:54 by mnegro            #+#    #+#             */
-/*   Updated: 2023/12/08 20:21:37 by mnegro           ###   ########.fr       */
+/*   Updated: 2023/12/09 19:31:47 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ int	Fixed::toInt(void) const {
 	return (this->_fixedPoint >> this->_FractBits);
 }
 
-std::ostream& operator<<(std::ostream& os, const Fixed& obj) {
+std::ostream& operator<<(std::ostream &os, const Fixed &obj) {
     os << obj.toFloat();
     return (os);
 }

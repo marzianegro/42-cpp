@@ -6,16 +6,16 @@
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 16:33:44 by mnegro            #+#    #+#             */
-/*   Updated: 2023/12/06 19:31:46 by mnegro           ###   ########.fr       */
+/*   Updated: 2023/12/09 19:26:28 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef HARL_HPP
+# define HARL_HPP
 
 #include <iostream>
 #include <map>
 #include <string>
-
-#ifndef HARL_HPP
-# define HARL_HPP
 
 class	Harl {
 
@@ -23,6 +23,7 @@ public:
 
 	Harl();
 	~Harl();
+
 	void	complain(std::string level);
 
 private:

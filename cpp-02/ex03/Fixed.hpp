@@ -6,19 +6,19 @@
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 11:10:43 by mnegro            #+#    #+#             */
-/*   Updated: 2023/12/09 17:25:59 by mnegro           ###   ########.fr       */
+/*   Updated: 2023/12/09 19:28:10 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FIXED_HPP
-#define FIXED_HPP
+# define FIXED_HPP
 
 #include <iostream>
 
-class Fixed
-{
+class Fixed {
 
 public:
+
 	Fixed();
 	Fixed(const Fixed &source);
 	Fixed(const int val);
@@ -59,6 +59,7 @@ public:
 	static const Fixed&	max(const Fixed &val1, const Fixed &val2);
 
 private:
+
 	int _fixedPoint;
 	static const int _FractBits = 8;
 };

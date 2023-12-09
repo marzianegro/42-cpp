@@ -6,13 +6,13 @@
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 18:25:37 by mnegro            #+#    #+#             */
-/*   Updated: 2023/12/04 10:51:56 by mnegro           ###   ########.fr       */
+/*   Updated: 2023/12/09 19:20:02 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <ctime>
 #include "Account.hpp"
+#include <ctime>
+#include <iostream>
 
 int	Account::_nbAccounts = 0;
 int	Account::_totalAmount = 0;

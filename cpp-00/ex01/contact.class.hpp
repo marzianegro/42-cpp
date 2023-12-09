@@ -6,12 +6,14 @@
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 14:54:30 by mnegro            #+#    #+#             */
-/*   Updated: 2023/12/03 19:10:16 by mnegro           ###   ########.fr       */
+/*   Updated: 2023/12/09 19:28:21 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CONTACT_CLASS_HPP
 # define CONTACT_CLASS_HPP
+
+#include <iostream>
 
 class	Contact {
 
@@ -19,6 +21,7 @@ public:
 
 	Contact(void);
 	~Contact(void);
+
 	int	getIndex(void) const;
 	std::string	getFirstName(void) const;
 	std::string	getLastName(void) const;
