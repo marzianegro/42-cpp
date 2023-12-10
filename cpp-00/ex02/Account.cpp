@@ -6,7 +6,7 @@
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 18:25:37 by mnegro            #+#    #+#             */
-/*   Updated: 2023/12/09 19:20:02 by mnegro           ###   ########.fr       */
+/*   Updated: 2023/12/10 15:58:55 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ int	Account::_totalNbDeposits = 0;
 int	Account::_totalNbWithdrawals = 0;
 
 void	Account::_displayTimestamp(void) {
-
 	time_t		rawTime;
 	struct tm	*timeInfo;
 	
@@ -80,12 +79,10 @@ void	Account::displayAccountsInfos(void) {
 }
 
 void	Account::makeDeposit(int deposit) {
-	
 	_displayTimestamp();
 	std::cout << "index:" << this->_accountIndex << ";"
 				<< "p_amount:" << this->_amount << ";";
-	if (deposit > 0)
-	{
+	if (deposit > 0) {
 		this->_nbDeposits++;
 		this->_totalNbDeposits++;
 		this->_amount += deposit;
@@ -97,19 +94,15 @@ void	Account::makeDeposit(int deposit) {
 }
 
 bool	Account::makeWithdrawal(int withdrawal) {
-	
 	_displayTimestamp();
 	std::cout << "index:" << this->_accountIndex << ";"
 				<< "p_amount:" << this->_amount << ";";
-	if (withdrawal <= this->_amount)
-	{
+	if (withdrawal <= this->_amount) {
 		this->_nbWithdrawals++;
 		this->_totalNbWithdrawals++;
 		this->_amount -= withdrawal;
 		this->_totalAmount -= withdrawal;
-	}
-	else
-	{
+	} else {
 		std::cout << "withdrawal:refused" << std::endl;
 		return (false);
 	}
@@ -124,7 +117,6 @@ int	Account::checkAmount(void) const {
 }
 
 void	Account::displayStatus(void) const {
-
 	_displayTimestamp();
 	std::cout << "index:" << this->_accountIndex << ";"
 				<< "amount:" << this->_amount << ";"

@@ -6,7 +6,7 @@
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 11:18:54 by mnegro            #+#    #+#             */
-/*   Updated: 2023/12/07 13:20:10 by mnegro           ###   ########.fr       */
+/*   Updated: 2023/12/10 16:00:59 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,9 @@ Fixed::Fixed(const Fixed &source) {
 // copy assignment operator overload
 Fixed&	Fixed::operator=(const Fixed &source) {
 	std::cout << "Copy assignment operator called" << std::endl;
-	if (this != &source)
+	if (this != &source) {
 		this->_fixedPoint = source._fixedPoint;
+	}
 	return (*this);
 }
 

@@ -6,7 +6,7 @@
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 14:58:27 by mnegro            #+#    #+#             */
-/*   Updated: 2023/12/09 19:18:59 by mnegro           ###   ########.fr       */
+/*   Updated: 2023/12/10 15:55:10 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,6 @@ void	Contact::setDarkestSecret(std::string info) {
 }
 
 void	Contact::printContact(void) const {
-
 	std::cout << "First name: " << this->_firstName << std::endl;
 	std::cout << "Last name: " << this->_lastName << std::endl;
 	std::cout << "Nickname: " << this->_nickName << std::endl;

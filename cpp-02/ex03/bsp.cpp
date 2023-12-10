@@ -6,7 +6,7 @@
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 18:29:40 by mnegro            #+#    #+#             */
-/*   Updated: 2023/12/09 18:54:57 by mnegro           ###   ########.fr       */
+/*   Updated: 2023/12/10 16:02:14 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,9 @@
 static Fixed	calculateArea(Point const a, Point const b, Point const c) {
 	Fixed half(static_cast<float>(0.5));
 	Fixed	area = half * ((b.getCoorX() - a.getCoorX()) * (c.getCoorY() - a.getCoorY()) - (c.getCoorX() - a.getCoorX()) * (b.getCoorY() - a.getCoorY()));
-	if (area < 0)
+	if (area < 0) {
 		area = area * -1;
+	}
 	return (area);
 }
 
@@ -41,11 +42,13 @@ bool	bsp(Point const a, Point const b, Point const c, Point const point) {
 	Fixed	totalArea = triangle1Area + triangle2Area + triangle3Area;
 	/*	If any of the sub-triangles have an area of 0, the point is on the
 		edge or vertex of the triangle */
-	if (triangle1Area == 0 || triangle2Area == 0 || triangle3Area == 0)
+	if (triangle1Area == 0 || triangle2Area == 0 || triangle3Area == 0) {
 		return (false);
+	}
 	/*	If the point is outside the triangle, the sum of the areas of the
 		sub-triangles will be greater than the area of the main triangle */
-	if (ogTriangleArea == totalArea)
+	if (ogTriangleArea == totalArea) {
 		return (true);
+	}
 	return (false);
 }

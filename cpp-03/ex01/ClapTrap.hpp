@@ -6,7 +6,7 @@
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 19:00:30 by mnegro            #+#    #+#             */
-/*   Updated: 2023/12/10 15:38:45 by mnegro           ###   ########.fr       */
+/*   Updated: 2023/12/10 15:42:12 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class	ClapTrap {
 public:
 
 	ClapTrap(); // ocf default constructor
-	ClapTrap(const ClapTrap &source) // ocf copy constructor
+	ClapTrap(const ClapTrap &source); // ocf copy constructor
 	ClapTrap(std::string name);
 	~ClapTrap(); // ocf destructor
 
@@ -31,7 +31,7 @@ public:
 	void	beRepaired(unsigned int amount);
 	void	getStats();
 
-private:
+protected:
 
 	std::string	_name;
 	int	_hitPoints;

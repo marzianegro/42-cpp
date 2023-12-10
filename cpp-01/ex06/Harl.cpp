@@ -6,7 +6,7 @@
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 16:33:51 by mnegro            #+#    #+#             */
-/*   Updated: 2023/12/07 13:24:27 by mnegro           ###   ########.fr       */
+/*   Updated: 2023/12/10 16:00:45 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,11 @@ void	Harl::complain(std::string level) {
 	std::string	complaintLvl[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 
 	int i = 0;
-	for (; i < 4; i++)
-		if (level.compare(complaintLvl[i]) == 0)
+	for (; i < 4; i++) {
+		if (level.compare(complaintLvl[i]) == 0) {
 			break;
+		}
+	}
 	switch (i)
 	{
 		case 0:

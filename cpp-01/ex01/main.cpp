@@ -6,7 +6,7 @@
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 11:38:20 by mnegro            #+#    #+#             */
-/*   Updated: 2023/12/09 19:30:06 by mnegro           ###   ########.fr       */
+/*   Updated: 2023/12/10 15:59:15 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,7 @@ int	main(void)
 	std::string	zombieName = "Zombert";
 
 	Zombie *horde = zombieHorde(numZombies, zombieName); 
-    for (int i = 0; i < numZombies; ++i)
-    {
+    for (int i = 0; i < numZombies; ++i) {
         std::cout << i << ") ";
         horde[i].announce();
     }

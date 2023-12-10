@@ -6,7 +6,7 @@
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 16:32:54 by mnegro            #+#    #+#             */
-/*   Updated: 2023/12/09 19:21:43 by mnegro           ###   ########.fr       */
+/*   Updated: 2023/12/10 16:00:09 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,15 +31,11 @@ bool	checkArgs(int ac, char **av)
 void	replaceString(std::string& line, const std::string& s1, const std::string& s2)
 {
     std::string	result;
-    for (std::size_t i = 0; i < line.length();)
-    {
-        if (line.substr(i, s1.length()) == s1)
-        {
+    for (std::size_t i = 0; i < line.length();) {
+        if (line.substr(i, s1.length()) == s1) {
             result += s2;
             i += s1.length();
-        }
-        else
-        {
+        } else {
             result += line[i];
             i++;
         }
@@ -49,8 +45,9 @@ void	replaceString(std::string& line, const std::string& s1, const std::string& 
 
 int	main(int ac, char **av)
 {
-	if (!checkArgs(ac, av))
+	if (!checkArgs(ac, av)) {
 		return (1);
+	}
 	std::string		infile_name = av[1];
 	std::string		outfile_name = infile_name + ".replace";
 	std::ifstream	infile(infile_name);

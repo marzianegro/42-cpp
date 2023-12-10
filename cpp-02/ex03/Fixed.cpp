@@ -6,7 +6,7 @@
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 11:18:54 by mnegro            #+#    #+#             */
-/*   Updated: 2023/12/09 19:32:30 by mnegro           ###   ########.fr       */
+/*   Updated: 2023/12/10 16:02:39 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,9 @@ Fixed::Fixed(const float val) {
 }
 
 Fixed&	Fixed::operator=(const Fixed &source) {
-	if (this != &source)
+	if (this != &source) {
 		this->_fixedPoint = source._fixedPoint;
+	}
 	return (*this);
 }
 
@@ -121,26 +122,30 @@ int	Fixed::toInt(void) const {
 }
 
 Fixed&	Fixed::min(Fixed &val1, Fixed &val2) {
-	if (val1 < val2)
+	if (val1 < val2) {
 		return (val1);
+	}
 	return (val2);
 }
  
 const Fixed&	Fixed::min(const Fixed &val1, const Fixed &val2) {
-	if (val1 < val2)
+	if (val1 < val2) {
 		return (val1);
+	}
 	return (val2);
 }
  
 Fixed&	Fixed::max(Fixed &val1, Fixed &val2) {
-	if (val1 > val2)
+	if (val1 > val2) {
 		return (val1);
+	}
 	return (val2);
 }
  
 const Fixed&	Fixed::max(const Fixed &val1, const Fixed &val2) {
-	if (val1 > val2)
+	if (val1 > val2) {
 		return (val1);
+	}
 	return (val2);
 }
 
