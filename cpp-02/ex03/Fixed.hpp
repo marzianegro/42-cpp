@@ -6,7 +6,7 @@
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 11:10:43 by mnegro            #+#    #+#             */
-/*   Updated: 2023/12/09 19:28:10 by mnegro           ###   ########.fr       */
+/*   Updated: 2023/12/10 15:32:45 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,14 @@ class Fixed {
 
 public:
 
-	Fixed();
-	Fixed(const Fixed &source);
+	Fixed(); // ocf default constructor
+	Fixed(const Fixed &source); // ocf copy constructor
 	Fixed(const int val);
 	Fixed(const float val);
-	~Fixed();
+	~Fixed(); // ocf destructor
  
-	Fixed& operator=(const Fixed &source);
+	Fixed& operator=(const Fixed &source); // ocf copy assignment operator
+	
 	/*	For comparison operators and arithmetic operators it's more common
 		to return a copy of the result, not a reference. This is because
 		these operators usually do not modify the objects they are called
