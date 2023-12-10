@@ -6,7 +6,7 @@
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 11:18:54 by mnegro            #+#    #+#             */
-/*   Updated: 2023/12/10 16:02:39 by mnegro           ###   ########.fr       */
+/*   Updated: 2023/12/10 19:37:25 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@ Fixed::Fixed() {
 	this->_fixedPoint = 0;
 }
 
-Fixed::Fixed(const Fixed &source) {
+Fixed::Fixed(const Fixed &src) {
 	// "this" here refers to the object called with the copy constructor
-	this->_fixedPoint = source._fixedPoint;
+	this->_fixedPoint = src._fixedPoint;
 }
 
 Fixed::Fixed(const int val) {
@@ -29,53 +29,53 @@ Fixed::Fixed(const float val) {
 	this->_fixedPoint = roundf(val * (1 << this->_FractBits));
 }
 
-Fixed&	Fixed::operator=(const Fixed &source) {
-	if (this != &source) {
-		this->_fixedPoint = source._fixedPoint;
+Fixed&	Fixed::operator=(const Fixed &src) {
+	if (this != &src) {
+		this->_fixedPoint = src._fixedPoint;
 	}
 	return (*this);
 }
 
 /* Comparison operators: >, <, >=, <=, ==, != */
-bool	Fixed::operator>(const Fixed &source) const {
-	return (this->_fixedPoint > source._fixedPoint);
+bool	Fixed::operator>(const Fixed &src) const {
+	return (this->_fixedPoint > src._fixedPoint);
 }
 
-bool	Fixed::operator<(const Fixed &source) const {
-	return (this->_fixedPoint < source._fixedPoint);
+bool	Fixed::operator<(const Fixed &src) const {
+	return (this->_fixedPoint < src._fixedPoint);
 }
 
-bool	Fixed::operator>=(const Fixed &source) const {
-	return (this->_fixedPoint >= source._fixedPoint);
+bool	Fixed::operator>=(const Fixed &src) const {
+	return (this->_fixedPoint >= src._fixedPoint);
 }
 
-bool	Fixed::operator<=(const Fixed &source) const {
-	return (this->_fixedPoint <= source._fixedPoint);
+bool	Fixed::operator<=(const Fixed &src) const {
+	return (this->_fixedPoint <= src._fixedPoint);
 }
 
-bool	Fixed::operator==(const Fixed &source) const {
-	return (this->_fixedPoint == source._fixedPoint);
+bool	Fixed::operator==(const Fixed &src) const {
+	return (this->_fixedPoint == src._fixedPoint);
 }
 
-bool	Fixed::operator!=(const Fixed &source) const {
-	return (this->_fixedPoint != source._fixedPoint);
+bool	Fixed::operator!=(const Fixed &src) const {
+	return (this->_fixedPoint != src._fixedPoint);
 }
 
 /* Arithmetic operators: +, -, *, / */
-Fixed	Fixed::operator+(const Fixed &source) {
-	return ((this->toFloat() + source.toFloat()));	
+Fixed	Fixed::operator+(const Fixed &src) {
+	return ((this->toFloat() + src.toFloat()));	
 }
 
-Fixed	Fixed::operator-(const Fixed &source) {
-	return ((this->toFloat() - source.toFloat()));	
+Fixed	Fixed::operator-(const Fixed &src) {
+	return ((this->toFloat() - src.toFloat()));	
 }
 
-Fixed	Fixed::operator*(const Fixed &source) {
-	return ((this->toFloat() * source.toFloat()));	
+Fixed	Fixed::operator*(const Fixed &src) {
+	return ((this->toFloat() * src.toFloat()));	
 }
 
-Fixed	Fixed::operator/(const Fixed &source) {
-	return ((this->toFloat() / source.toFloat()));	
+Fixed	Fixed::operator/(const Fixed &src) {
+	return ((this->toFloat() / src.toFloat()));	
 }
 
 /* Pre- and post-increment/decrement operators */

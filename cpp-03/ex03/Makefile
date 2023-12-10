@@ -6,7 +6,7 @@
 #    By: mnegro <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/24 18:25:00 by mnegro            #+#    #+#              #
-#    Updated: 2023/12/10 16:32:57 by mnegro           ###   ########.fr        #
+#    Updated: 2023/12/10 20:05:38 by mnegro           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,14 +17,14 @@
 .SILENT:
 
 ### VARIABLES (DEFINITION) ###
-NAME = ScavTrap
+NAME = DiamondTrap
 
 CC = c++
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+CFLAGS = -Wall -Wextra -Werror -Wshadow -std=c++98
 RM = rm -f
 
 #### TARGETS ####
-SRCS = ClapTrap.cpp main.cpp ScavTrap.cpp
+SRCS = ClapTrap.cpp DiamondTrap.cpp FragTrap.cpp main.cpp ScavTrap.cpp
 
 OBJS = ${SRCS:.cpp=.o}
 

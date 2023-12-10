@@ -6,7 +6,7 @@
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 11:18:54 by mnegro            #+#    #+#             */
-/*   Updated: 2023/12/10 16:00:59 by mnegro           ###   ########.fr       */
+/*   Updated: 2023/12/10 19:37:25 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,17 +18,17 @@ Fixed::Fixed() {
 }
 
 // copy constructor
-Fixed::Fixed(const Fixed &source) {
+Fixed::Fixed(const Fixed &src) {
 	std::cout << "Copy constructor called" << std::endl;
 	// "this" here refers to the object called with the copy constructor
-	this->_fixedPoint = source._fixedPoint;
+	this->_fixedPoint = src._fixedPoint;
 }
 
 // copy assignment operator overload
-Fixed&	Fixed::operator=(const Fixed &source) {
+Fixed&	Fixed::operator=(const Fixed &src) {
 	std::cout << "Copy assignment operator called" << std::endl;
-	if (this != &source) {
-		this->_fixedPoint = source._fixedPoint;
+	if (this != &src) {
+		this->_fixedPoint = src._fixedPoint;
 	}
 	return (*this);
 }

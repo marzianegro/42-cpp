@@ -6,7 +6,7 @@
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 19:01:16 by mnegro            #+#    #+#             */
-/*   Updated: 2023/12/10 21:28:35 by mnegro           ###   ########.fr       */
+/*   Updated: 2023/12/10 21:29:30 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ public:
 	
 	void	attack(const std::string &target);
 	void	guardGate();
-
 };
 
 #endif

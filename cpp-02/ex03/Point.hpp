@@ -6,7 +6,7 @@
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 17:20:37 by mnegro            #+#    #+#             */
-/*   Updated: 2023/12/10 15:38:46 by mnegro           ###   ########.fr       */
+/*   Updated: 2023/12/10 19:37:25 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,11 @@ class	Point {
 public:
 
 	Point(); // ocf default constructor
-	Point(const Point &source); // ocf copy constructor
+	Point(const Point &src); // ocf copy constructor
 	Point(const float val_x, const float val_y);
 	~Point(); // ocf destructor
 
-	Point&	operator=(const Point &source); // ocf copy assignment operator
+	Point&	operator=(const Point &src); // ocf copy assignment operator
 	
 	Fixed	getCoorX() const;
 	Fixed	getCoorY() const;

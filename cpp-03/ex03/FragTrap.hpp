@@ -1,34 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/09 19:01:16 by mnegro            #+#    #+#             */
-/*   Updated: 2023/12/10 21:28:35 by mnegro           ###   ########.fr       */
+/*   Created: 2023/12/09 19:01:10 by mnegro            #+#    #+#             */
+/*   Updated: 2023/12/10 21:29:58 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-# define SCAVTRAP_HPP
+#ifndef FRAGTRAP_HPP
+# define FRAGTRAP_HPP
 
 #include "ClapTrap.hpp"
 
-class	ScavTrap : public ClapTrap {
+class	FragTrap : virtual public ClapTrap {
 
 public:
 
-	ScavTrap(); // ocf default constructor
-	ScavTrap(const ScavTrap &src); // ocf copy constructor
-	ScavTrap(const std::string &name);
-	~ScavTrap(); // ocf destructor
+	FragTrap(); // ocf default constructor
+	FragTrap(const FragTrap &src); // ocf copy constructor
+	FragTrap(const std::string &name);
+	~FragTrap(); // ocf destructor
 
-	ScavTrap&	operator=(const ScavTrap &src); // ocf copy assignment operator
-	
-	void	attack(const std::string &target);
-	void	guardGate();
+	FragTrap&	operator=(const FragTrap &src); // ocf copy assignment operator
 
+	void	highFivesGuys(void);
 };
 
 #endif

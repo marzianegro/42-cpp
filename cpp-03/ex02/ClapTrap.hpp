@@ -6,7 +6,7 @@
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 19:00:30 by mnegro            #+#    #+#             */
-/*   Updated: 2023/12/10 21:09:56 by mnegro           ###   ########.fr       */
+/*   Updated: 2023/12/10 21:13:21 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ public:
 	void	beRepaired(unsigned int amount);
 	void	getStats();
 
-private:
+protected:
 
 	std::string	_name;
 	int	_hitPoints;
