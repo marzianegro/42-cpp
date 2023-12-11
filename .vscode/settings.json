@@ -58,6 +58,18 @@
 		"iomanip": "cpp",
 		"map": "cpp",
 		"iterator": "cpp",
-		"memory_resource": "cpp"
+		"memory_resource": "cpp",
+		"bit": "cpp",
+		"*.tcc": "cpp",
+		"compare": "cpp",
+		"concepts": "cpp",
+		"deque": "cpp",
+		"functional": "cpp",
+		"memory": "cpp",
+		"numeric": "cpp",
+		"random": "cpp",
+		"type_traits": "cpp",
+		"utility": "cpp",
+		"ranges": "cpp"
 	}
 }

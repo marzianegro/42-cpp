@@ -6,7 +6,7 @@
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 14:49:42 by mnegro            #+#    #+#             */
-/*   Updated: 2023/12/09 19:23:37 by mnegro           ###   ########.fr       */
+/*   Updated: 2023/12/11 11:37:49 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 
 #include "contact.class.hpp"
 #include <iostream>
+#include <stdlib.h>
 
 class	PhoneBook {
 

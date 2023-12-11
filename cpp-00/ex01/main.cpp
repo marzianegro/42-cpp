@@ -6,7 +6,7 @@
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 15:02:05 by mnegro            #+#    #+#             */
-/*   Updated: 2023/12/10 15:56:11 by mnegro           ###   ########.fr       */
+/*   Updated: 2023/12/11 13:21:40 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ int main(void)
 	std::getline(std::cin, cmd);
 	while (cmd.compare("EXIT") != 0)
 	{
+		if (std::cin.eof())
+			return (1);
 		if (cmd.compare("ADD") == 0) {
 			crappy.addContact();
 		} else if (cmd.compare("SEARCH") == 0) {

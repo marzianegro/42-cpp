@@ -6,7 +6,7 @@
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 18:25:04 by mnegro            #+#    #+#             */
-/*   Updated: 2023/12/10 15:54:58 by mnegro           ###   ########.fr       */
+/*   Updated: 2023/12/11 11:35:25 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int main(int ac, char **av)
 		for (int j = 0; i < av[i][j]; j++) {
 			std::cout << (char)toupper(av[i][j]);
 		}
-		std::cout << std::endl;
 	}
+	std::cout << std::endl;
 	return (0);
 }

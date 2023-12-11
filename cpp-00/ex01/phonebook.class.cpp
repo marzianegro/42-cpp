@@ -6,7 +6,7 @@
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 14:59:56 by mnegro            #+#    #+#             */
-/*   Updated: 2023/12/10 15:58:26 by mnegro           ###   ########.fr       */
+/*   Updated: 2023/12/11 13:11:44 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,14 @@
 
 PhoneBook::PhoneBook(void) {
 	this->_i = 0;
+	this->contacts[0].setIndex(0);
+	this->contacts[1].setIndex(0);
+	this->contacts[2].setIndex(0);
+	this->contacts[3].setIndex(0);
+	this->contacts[4].setIndex(0);
+	this->contacts[5].setIndex(0);
+	this->contacts[6].setIndex(0);
+	this->contacts[7].setIndex(0);
 	return ;
 }
 
@@ -39,6 +47,8 @@ std::string	checkString(std::string prompt) {
 	{
 		std::cout << "Please enter contact's " << prompt << ": ";
 		std::getline(std::cin, info);
+		if (std::cin.eof())
+			exit(1);
 		if (info.length() == 0) {
 			std::cout << "Error: field can't be empty! ";
 		}
@@ -98,6 +108,8 @@ void	PhoneBook::searchContact(void) {
 	std::cout << "|**********|**********|**********|**********|\n";
 	std::cout << "Please enter an index between 1 and 8: ";
 	std::getline(std::cin, str);
+	if (std::cin.eof())
+			exit(1);
 	index = std::atoi(str.c_str());
 	if (index < 1 || index > 8) {
 		std::cout << "Error: index is out of range!" << std::endl;

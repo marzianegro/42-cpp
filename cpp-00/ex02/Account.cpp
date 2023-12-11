@@ -6,7 +6,7 @@
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 18:25:37 by mnegro            #+#    #+#             */
-/*   Updated: 2023/12/10 15:58:55 by mnegro           ###   ########.fr       */
+/*   Updated: 2023/12/11 11:51:05 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,7 @@ void	Account::makeDeposit(int deposit) {
 	}
 	std::cout << "deposit:" << deposit << ";"
 				<< "amount:" << this->_amount << ";"
-				<< "nb_deposit:" << this->_nbDeposits << std::endl;
+				<< "nb_deposits:" << this->_nbDeposits << std::endl;
 }
 
 bool	Account::makeWithdrawal(int withdrawal) {
@@ -108,7 +108,7 @@ bool	Account::makeWithdrawal(int withdrawal) {
 	}
 	std::cout << "withdrawal:" << withdrawal << ";"
 				<< "amount:" << this->_amount << ";"
-				<< "nb_withdrawal:" << this->_nbWithdrawals << std::endl;
+				<< "nb_withdrawals:" << this->_nbWithdrawals << std::endl;
 	return (true);
 }
 
