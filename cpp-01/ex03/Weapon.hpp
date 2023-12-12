@@ -6,7 +6,7 @@
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 15:41:26 by mnegro            #+#    #+#             */
-/*   Updated: 2023/12/09 19:24:51 by mnegro           ###   ########.fr       */
+/*   Updated: 2023/12/12 10:40:38 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ public:
 	Weapon(std::string type);
 	~Weapon();
 
-	const std::string& getType(void) const;
+	const std::string&	getType(void) const;
 	void	setType(std::string type);
 
 private:

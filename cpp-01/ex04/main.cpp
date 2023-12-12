@@ -6,7 +6,7 @@
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 16:32:54 by mnegro            #+#    #+#             */
-/*   Updated: 2023/12/11 15:27:36 by mnegro           ###   ########.fr       */
+/*   Updated: 2023/12/12 10:55:22 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 bool	checkArgs(int ac, char **av)
 {
 	if (ac != 4) {
-		std::cout << "Error: invalid number of arguments" << std::endl;
+		std::cout << "Error: invalid number of arguments!\nPlease specify (in this order) filename, word to be replaced, and replacement word" << std::endl;
 		return (false);
 	}
 	std::ifstream	file(av[1]);
@@ -32,6 +32,7 @@ void	replaceString(std::string& line, const std::string& s1, const std::string& 
 {
     std::string	result;
     for (std::size_t i = 0; i < line.length();) {
+		// is the substring of line starting at current position and of length of s1 euqal to s1?
         if (line.substr(i, s1.length()) == s1) {
             result += s2;
             i += s1.length();
@@ -50,10 +51,11 @@ int	main(int ac, char **av)
 	}
 	std::string		infile_name = av[1];
 	std::string		outfile_name = infile_name + ".replace";
+	// c_str() converts std::string to const char*
 	std::ifstream	infile(infile_name.c_str());
 	std::ofstream	outfile(outfile_name.c_str());
 	if (!outfile.is_open()) {
-        std::cout << "Error: can't create file." << std::endl;
+        std::cout << "Error: can't create file" << std::endl;
         return (1);
 	}
 	std::string	line;

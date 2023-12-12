@@ -6,7 +6,7 @@
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 15:33:47 by mnegro            #+#    #+#             */
-/*   Updated: 2023/12/09 19:30:21 by mnegro           ###   ########.fr       */
+/*   Updated: 2023/12/12 10:39:23 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,9 @@
 int	main(void)
 {
 	std::string brain = "HI THIS IS BRAIN";
+	// Pointer: special type of variable that stores the memory address of another variable
 	std::string	*stringPTR = &brain;
+	// Reference: alias for another object
 	std::string	&stringREF = brain;
 
 	std::cout << "Memory address of brain is: " << &brain << std::endl;

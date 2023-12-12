@@ -6,7 +6,7 @@
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 16:33:44 by mnegro            #+#    #+#             */
-/*   Updated: 2023/12/09 19:26:20 by mnegro           ###   ########.fr       */
+/*   Updated: 2023/12/12 10:59:16 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,8 @@ private:
 	void	debug(void) const;
 	void	info(void) const;
 	void	warning(void) const;
-	void	error(void) const ;
+	void	error(void) const;
+	// alias for a specific type of member function pointer
 	typedef	void	(Harl::*MemFn)() const;
 };
 
