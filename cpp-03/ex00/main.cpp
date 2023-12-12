@@ -6,7 +6,7 @@
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 19:00:32 by mnegro            #+#    #+#             */
-/*   Updated: 2023/12/10 21:01:17 by mnegro           ###   ########.fr       */
+/*   Updated: 2023/12/12 15:34:46 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,31 +18,27 @@ int	main(void)
 	ClapTrap B;
 	ClapTrap C = A;
 
+	std::cout << "\n----------\n\n";
+	std::cout << "ClapTraps' initial statistics\n";
 	A.getStats();
 	B.getStats();
 	C.getStats();
-
+	std::cout << "----------\n\n";
 	A.attack("ENEMY");
 	A.takeDamage(9);
 	A.takeDamage(2);
 	A.beRepaired(11);
 	A.beRepaired(11);
-	A.beRepaired(11);
-	A.beRepaired(11);
-	A.beRepaired(11);
-	A.beRepaired(11);
-	A.beRepaired(11);
-	A.beRepaired(11);
-	A.beRepaired(11);
 	A.attack("ENEMY");
-	A.beRepaired(11);
-	A.beRepaired(11);
 
-	std::cout << std::endl << "Now we're attacking with C, a copy of A. They have the same name, but C has energy points left" << std::endl;
+	std::cout << "Next we'll attack with C, a copy of A. They have the same name, but C hasn't lost any energy point" << std::endl;
 	C.attack("ENEMY");
-	
+
+	std::cout << "\n----------\n\n";
+	std::cout << "ClapTraps' final statistics\n";
 	A.getStats();
 	B.getStats();
 	C.getStats();
+	std::cout << "----------\n\n";
 	return (0);
 }

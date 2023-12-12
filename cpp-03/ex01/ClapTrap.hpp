@@ -6,7 +6,7 @@
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 19:00:30 by mnegro            #+#    #+#             */
-/*   Updated: 2023/12/10 21:09:57 by mnegro           ###   ########.fr       */
+/*   Updated: 2023/12/12 15:38:38 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ public:
 	void	getStats();
 
 protected:
+/*	protected members of the base class are accessible by the derived class,
+	but not outside the class */
 
 	std::string	_name;
 	int	_hitPoints;
