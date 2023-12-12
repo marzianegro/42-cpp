@@ -6,7 +6,7 @@
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 14:59:56 by mnegro            #+#    #+#             */
-/*   Updated: 2023/12/11 13:11:44 by mnegro           ###   ########.fr       */
+/*   Updated: 2023/12/12 10:28:39 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 PhoneBook::PhoneBook(void) {
 	this->_i = 0;
-	this->contacts[0].setIndex(0);
-	this->contacts[1].setIndex(0);
-	this->contacts[2].setIndex(0);
-	this->contacts[3].setIndex(0);
-	this->contacts[4].setIndex(0);
-	this->contacts[5].setIndex(0);
-	this->contacts[6].setIndex(0);
-	this->contacts[7].setIndex(0);
+	this->_contacts[0].setIndex(0);
+	this->_contacts[1].setIndex(0);
+	this->_contacts[2].setIndex(0);
+	this->_contacts[3].setIndex(0);
+	this->_contacts[4].setIndex(0);
+	this->_contacts[5].setIndex(0);
+	this->_contacts[6].setIndex(0);
+	this->_contacts[7].setIndex(0);
 	return ;
 }
 
@@ -66,12 +66,12 @@ void	PhoneBook::addContact(void) {
 	if (this->_i >= 8) {
 		this->_i = 0;
 	}
-	this->contacts[this->_i].setIndex(this->_i + 1);
-	this->contacts[this->_i].setFirstName(checkString("first name"));
-	this->contacts[this->_i].setLastName(checkString("last name"));
-	this->contacts[this->_i].setNickName(checkString("nick name"));
-	this->contacts[this->_i].setPhoneNumber(checkString("phone number"));
-	this->contacts[this->_i].setDarkestSecret(checkString("darkest secret"));
+	this->_contacts[this->_i].setIndex(this->_i + 1);
+	this->_contacts[this->_i].setFirstName(checkString("first name"));
+	this->_contacts[this->_i].setLastName(checkString("last name"));
+	this->_contacts[this->_i].setNickName(checkString("nick name"));
+	this->_contacts[this->_i].setPhoneNumber(checkString("phone number"));
+	this->_contacts[this->_i].setDarkestSecret(checkString("darkest secret"));
 	this->_i++;
 }
 
@@ -96,13 +96,13 @@ void	PhoneBook::searchContact(void) {
 	std::cout << "|     index| firstname|  lastname|  nickname|\n";
 	std::cout << "|**********|**********|**********|**********|\n";
 	for (int i = 0; i < 8; i++) {
-		if (this->contacts[i].getIndex() == 0) {
+		if (this->_contacts[i].getIndex() == 0) {
 			continue ;
 		}
-		std::cout << "|         " << this->contacts[i].getIndex() << "|";
-		printInfo(this->contacts[i].getFirstName());
-		printInfo(this->contacts[i].getLastName());
-		printInfo(this->contacts[i].getNickName());
+		std::cout << "|         " << this->_contacts[i].getIndex() << "|";
+		printInfo(this->_contacts[i].getFirstName());
+		printInfo(this->_contacts[i].getLastName());
+		printInfo(this->_contacts[i].getNickName());
 		std::cout << std::endl;
 	}
 	std::cout << "|**********|**********|**********|**********|\n";
@@ -114,7 +114,7 @@ void	PhoneBook::searchContact(void) {
 	if (index < 1 || index > 8) {
 		std::cout << "Error: index is out of range!" << std::endl;
 	} else {
- 		this->contacts[index - 1].printContact();
+ 		this->_contacts[index - 1].printContact();
 	}
 }
 

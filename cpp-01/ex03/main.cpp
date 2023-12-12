@@ -6,7 +6,7 @@
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 15:41:28 by mnegro            #+#    #+#             */
-/*   Updated: 2023/12/04 19:11:28 by mnegro           ###   ########.fr       */
+/*   Updated: 2023/12/11 15:15:54 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "HumanA.hpp"
 #include "HumanB.hpp"
 
-int	main()
+int	main(void)
 {
 	{
 		Weapon	club = Weapon("crude spiked club");

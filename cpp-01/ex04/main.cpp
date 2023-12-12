@@ -6,7 +6,7 @@
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 16:32:54 by mnegro            #+#    #+#             */
-/*   Updated: 2023/12/10 16:00:09 by mnegro           ###   ########.fr       */
+/*   Updated: 2023/12/11 15:27:36 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,8 +50,8 @@ int	main(int ac, char **av)
 	}
 	std::string		infile_name = av[1];
 	std::string		outfile_name = infile_name + ".replace";
-	std::ifstream	infile(infile_name);
-	std::ofstream	outfile(outfile_name);
+	std::ifstream	infile(infile_name.c_str());
+	std::ofstream	outfile(outfile_name.c_str());
 	if (!outfile.is_open()) {
         std::cout << "Error: can't create file." << std::endl;
         return (1);

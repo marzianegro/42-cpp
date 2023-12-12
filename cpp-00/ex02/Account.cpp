@@ -6,7 +6,7 @@
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 18:25:37 by mnegro            #+#    #+#             */
-/*   Updated: 2023/12/11 11:51:05 by mnegro           ###   ########.fr       */
+/*   Updated: 2023/12/12 10:28:45 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ void	Account::_displayTimestamp(void) {
 				timeInfo->tm_mday << "_" <<
 				timeInfo->tm_hour <<
 				timeInfo->tm_min <<
-				// add 0 in front of seconds when between 0 and 9
 				timeInfo->tm_sec <<
 				"] ";
 }
