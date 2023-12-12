@@ -6,9 +6,13 @@
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 11:10:43 by mnegro            #+#    #+#             */
-/*   Updated: 2023/12/10 19:37:25 by mnegro           ###   ########.fr       */
+/*   Updated: 2023/12/12 13:21:25 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/*	Fixed-point numbers are a simple, yet very powerful way to represent
+	fractional numbers, and they offer a valuable balance between performance,
+	accuracy, range, and precision */
 
 #ifndef FIXED_HPP
 # define FIXED_HPP
@@ -31,7 +35,7 @@ public:
 private:
 
 	int	_fixedPoint;
-	static const int	FractBits = 8;
+	static const int	_FractBits = 8;
 };
 
 #endif

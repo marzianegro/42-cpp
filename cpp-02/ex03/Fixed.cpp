@@ -6,7 +6,7 @@
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 11:18:54 by mnegro            #+#    #+#             */
-/*   Updated: 2023/12/10 19:37:25 by mnegro           ###   ########.fr       */
+/*   Updated: 2023/12/12 13:58:36 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ Fixed::Fixed() {
 }
 
 Fixed::Fixed(const Fixed &src) {
-	// "this" here refers to the object called with the copy constructor
 	this->_fixedPoint = src._fixedPoint;
 }
 
@@ -27,6 +26,10 @@ Fixed::Fixed(const int val) {
 
 Fixed::Fixed(const float val) {
 	this->_fixedPoint = roundf(val * (1 << this->_FractBits));
+}
+
+Fixed::~Fixed() {
+	return ;
 }
 
 Fixed&	Fixed::operator=(const Fixed &src) {
@@ -99,10 +102,6 @@ Fixed Fixed::operator--(int) {
 	Fixed	tmp = *this;
 	this->_fixedPoint--;
 	return (tmp);
-}
-
-Fixed::~Fixed() {
-	return ;
 }
 
 int	Fixed::getRawBits(void) const {

@@ -6,13 +6,14 @@
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 11:10:43 by mnegro            #+#    #+#             */
-/*   Updated: 2023/12/10 19:37:25 by mnegro           ###   ########.fr       */
+/*   Updated: 2023/12/12 13:41:36 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FIXED_HPP
 #define FIXED_HPP
 
+#include <cmath>
 #include <iostream>
 
 class Fixed {
@@ -65,8 +66,6 @@ private:
 	static const int _FractBits = 8;
 };
 
-/* Overload of the insertion operator that inserts a floating point representation
-of the fixed-point number into the output stream object passed as parameter */
 std::ostream& operator<<(std::ostream &os, const Fixed &obj);
 
 #endif
