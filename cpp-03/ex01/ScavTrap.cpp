@@ -6,7 +6,7 @@
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 19:01:14 by mnegro            #+#    #+#             */
-/*   Updated: 2023/12/12 16:36:48 by mnegro           ###   ########.fr       */
+/*   Updated: 2023/12/13 12:10:45 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,8 @@ ScavTrap::ScavTrap() : ClapTrap() {
 	this->_attackDamage = 20;
 }
 
-// This is (theoretically) all inherited from ClapTrap's copy constructor
 ScavTrap::ScavTrap(const ScavTrap &src) : ClapTrap(src) {
 	std::cout << "ScavTrap copy constructor called" << std::endl;
-	// this->_name = src._name;
-	// this->_hitPoints = src._hitPoints;
-	// this->_energyPoints = src._energyPoints;
-	// this->_attackDamage = src._attackDamage;
 }
 
 ScavTrap::ScavTrap(const std::string &name) : ClapTrap(name) {
