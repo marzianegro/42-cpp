@@ -1,33 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.hpp                                          :+:      :+:    :+:   */
+/*   Ice.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/14 15:19:23 by mnegro            #+#    #+#             */
-/*   Updated: 2023/12/14 21:58:30 by mnegro           ###   ########.fr       */
+/*   Created: 2023/12/14 22:28:43 by mnegro            #+#    #+#             */
+/*   Updated: 2023/12/15 00:01:37 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BRAIN_HPP
-# define BRAIN_HPP
+#ifndef ICE_HPP
+# define ICE_HPP
 
-#include <iostream>
+#include "AMateria.hpp"
 
-class	Brain {
+class	Ice : public AMateria {
 
 public:
 
-	Brain(); // ocf default constructor
-	Brain(const Brain &src); // ocf copy constructor
-	~Brain(); // ocf destructor
+	Ice(); // ocf default constructor
+	Ice(const Ice &src); // ocf copy constructor
+	~Ice(); // ocf destructor
 
-	Brain&	operator=(const Brain &src); // ocf copy assignment operator
+	Ice&	operator=(const Ice &src); // ocf copy assignment operator
 
-private:
-
-	std::string	_ideas[100];
+	Ice*	clone() const;
+	void	use(ICharacter &target);
 };
 
 #endif

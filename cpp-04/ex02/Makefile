@@ -6,7 +6,7 @@
 #    By: mnegro <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/24 18:25:00 by mnegro            #+#    #+#              #
-#    Updated: 2023/12/14 22:14:41 by mnegro           ###   ########.fr        #
+#    Updated: 2023/12/14 22:15:01 by mnegro           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,14 +17,14 @@
 .SILENT:
 
 ### VARIABLES (DEFINITION) ###
-NAME = brain
+NAME = aanimal
 
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 RM = rm -f
 
 #### TARGETS ####
-SRCS = Animal.cpp Brain.cpp Cat.cpp Dog.cpp main.cpp WrongAnimal.cpp WrongCat.cpp
+SRCS = AAnimal.cpp Brain.cpp Cat.cpp Dog.cpp main.cpp WrongAnimal.cpp WrongCat.cpp
 
 OBJS = ${SRCS:.cpp=.o}
 

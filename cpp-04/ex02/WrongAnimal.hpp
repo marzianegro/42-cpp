@@ -1,33 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.hpp                                          :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/14 15:19:23 by mnegro            #+#    #+#             */
-/*   Updated: 2023/12/14 21:58:30 by mnegro           ###   ########.fr       */
+/*   Created: 2023/12/14 12:46:04 by mnegro            #+#    #+#             */
+/*   Updated: 2023/12/14 15:16:16 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BRAIN_HPP
-# define BRAIN_HPP
+#ifndef WRONGANIMAL_HPP
+# define WRONGANIMAL_HPP
 
 #include <iostream>
 
-class	Brain {
+class	WrongAnimal {
 
 public:
 
-	Brain(); // ocf default constructor
-	Brain(const Brain &src); // ocf copy constructor
-	~Brain(); // ocf destructor
+	WrongAnimal(); // ocf default constructor
+	WrongAnimal(const WrongAnimal &src); // ocf copy constructor
+	virtual ~WrongAnimal(); // ocf destructor
 
-	Brain&	operator=(const Brain &src); // ocf copy assignment operator
+	WrongAnimal&	operator=(const WrongAnimal &src); // ocf copy assignment operator
 
-private:
+	std::string	getType() const;
+	void	makeSound() const;
 
-	std::string	_ideas[100];
+protected:
+
+	std::string _type;
 };
 
 #endif

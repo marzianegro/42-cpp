@@ -6,7 +6,7 @@
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 10:05:51 by mnegro            #+#    #+#             */
-/*   Updated: 2023/12/14 15:42:26 by mnegro           ###   ########.fr       */
+/*   Updated: 2023/12/14 21:58:28 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,10 @@ public:
 	Dog&	operator=(const Dog &src); // ocf copy assignment operator
 
 	void	makeSound() const;
+
+private:
+
+	Brain*	_brain;
 };
 
 #endif

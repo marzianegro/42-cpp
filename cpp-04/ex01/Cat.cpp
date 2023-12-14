@@ -6,7 +6,7 @@
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 10:10:49 by mnegro            #+#    #+#             */
-/*   Updated: 2023/12/14 15:45:31 by mnegro           ###   ########.fr       */
+/*   Updated: 2023/12/14 21:59:16 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 Cat::Cat() : Animal() {
 	std::cout << "Cat default constructor called" << std::endl;
 	this->_type = "Cat";
+	this->_brain = new Brain();
 }
 
 Cat::Cat(const Cat &src) : Animal(src) {
@@ -22,6 +23,7 @@ Cat::Cat(const Cat &src) : Animal(src) {
 }
 
 Cat::~Cat() {
+	delete this->_brain;
 	std::cout << "Cat destructor called" << std::endl;
 }
 

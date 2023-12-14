@@ -1,33 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.hpp                                          :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/14 15:19:23 by mnegro            #+#    #+#             */
-/*   Updated: 2023/12/14 21:58:30 by mnegro           ###   ########.fr       */
+/*   Created: 2023/12/14 12:51:14 by mnegro            #+#    #+#             */
+/*   Updated: 2023/12/14 15:18:47 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BRAIN_HPP
-# define BRAIN_HPP
+#ifndef WRONGCAT_HPP
+# define WRONGCAT_HPP
 
-#include <iostream>
+#include "WrongAnimal.hpp"
 
-class	Brain {
+class	WrongCat : public WrongAnimal {
 
 public:
 
-	Brain(); // ocf default constructor
-	Brain(const Brain &src); // ocf copy constructor
-	~Brain(); // ocf destructor
+	WrongCat(); // ocf default constructor
+	WrongCat(const WrongCat &src); // ocf copy constructor
+	virtual ~WrongCat(); // ocf destructor
 
-	Brain&	operator=(const Brain &src); // ocf copy assignment operator
+	WrongCat&	operator=(const WrongCat &src); // ocf copy assignment operator
 
-private:
-
-	std::string	_ideas[100];
+	// void	makeSound() const;
 };
 
 #endif

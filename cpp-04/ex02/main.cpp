@@ -6,17 +6,18 @@
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 10:30:39 by mnegro            #+#    #+#             */
-/*   Updated: 2023/12/14 22:12:32 by mnegro           ###   ########.fr       */
+/*   Updated: 2023/12/14 22:13:04 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 #include "Cat.hpp"
 #include "Dog.hpp"
 
 int	main(void)
 {
-	const Animal*	animals[10];
+
+	const AAnimal*	animals[10];
 	
 	std::cout << "\n----------\n";
 	std::cout << "\nanimals[0-4] is being filled with Dog objects\n\n";

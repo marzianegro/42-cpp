@@ -1,33 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.hpp                                          :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/14 15:19:23 by mnegro            #+#    #+#             */
-/*   Updated: 2023/12/14 21:58:30 by mnegro           ###   ########.fr       */
+/*   Created: 2023/12/14 10:05:51 by mnegro            #+#    #+#             */
+/*   Updated: 2023/12/14 22:11:51 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BRAIN_HPP
-# define BRAIN_HPP
+#ifndef DOG_HPP
+# define DOG_HPP
 
-#include <iostream>
+#include "AAnimal.hpp"
+#include "Brain.hpp"
 
-class	Brain {
+class	Dog : public AAnimal {
 
 public:
 
-	Brain(); // ocf default constructor
-	Brain(const Brain &src); // ocf copy constructor
-	~Brain(); // ocf destructor
+	Dog(); // ocf default constructor
+	Dog(const Dog &src); // ocf copy constructor
+	virtual ~Dog(); // ocf destructor
 
-	Brain&	operator=(const Brain &src); // ocf copy assignment operator
+	Dog&	operator=(const Dog &src); // ocf copy assignment operator
+
+	void	makeSound() const;
 
 private:
 
-	std::string	_ideas[100];
+	Brain*	_brain;
 };
 
 #endif

@@ -1,33 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.hpp                                          :+:      :+:    :+:   */
+/*   Cure.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/14 15:19:23 by mnegro            #+#    #+#             */
-/*   Updated: 2023/12/14 21:58:30 by mnegro           ###   ########.fr       */
+/*   Created: 2023/12/14 22:26:53 by mnegro            #+#    #+#             */
+/*   Updated: 2023/12/14 22:35:12 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BRAIN_HPP
-# define BRAIN_HPP
+#ifndef CURE_HPP
+# define CURE_HPP
 
-#include <iostream>
+#include "AMateria.hpp"
 
-class	Brain {
+class	Cure : public AMateria {
 
 public:
 
-	Brain(); // ocf default constructor
-	Brain(const Brain &src); // ocf copy constructor
-	~Brain(); // ocf destructor
+	Cure(); // ocf default constructor
+	Cure(const Cure &src); // ocf copy constructor
+	~Cure(); // ocf destructor
 
-	Brain&	operator=(const Brain &src); // ocf copy assignment operator
+	Cure&	operator=(const Cure &src); // ocf copy assignment operator
 
-private:
-
-	std::string	_ideas[100];
+	Cure*	clone() const;
+	void	use(ICharacter &target);
 };
 
 #endif

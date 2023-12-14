@@ -1,33 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.hpp                                          :+:      :+:    :+:   */
+/*   ICharacter.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/14 15:19:23 by mnegro            #+#    #+#             */
-/*   Updated: 2023/12/14 21:58:30 by mnegro           ###   ########.fr       */
+/*   Created: 2023/12/14 22:37:27 by mnegro            #+#    #+#             */
+/*   Updated: 2023/12/14 23:56:33 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BRAIN_HPP
-# define BRAIN_HPP
+#ifndef ICHARACTER_HPP
+# define ICHARACTER_HPP
 
+#include "AMateria.hpp"
 #include <iostream>
 
-class	Brain {
+class	AMateria;
+
+class	ICharacter {
 
 public:
 
-	Brain(); // ocf default constructor
-	Brain(const Brain &src); // ocf copy constructor
-	~Brain(); // ocf destructor
-
-	Brain&	operator=(const Brain &src); // ocf copy assignment operator
-
-private:
-
-	std::string	_ideas[100];
+	virtual ~ICharacter() {}
+	virtual std::string const&	getName() const = 0;
+	virtual void	equip(AMateria *m) = 0;
+	virtual void	unequip(int idx) = 0;
+	virtual void	use(int idx, ICharacter &target) = 0;
 };
 
 #endif
