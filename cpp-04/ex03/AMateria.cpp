@@ -6,7 +6,7 @@
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 22:18:59 by mnegro            #+#    #+#             */
-/*   Updated: 2023/12/15 00:08:33 by mnegro           ###   ########.fr       */
+/*   Updated: 2023/12/15 17:59:00 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ AMateria::AMateria() {
 
 AMateria::AMateria(const AMateria &src) {
 	std::cout << "AMateria copy constructor called" << std::endl;
-	this->_type = src._type;
+	*this = src;
 }
 
 AMateria::AMateria(std::string const &type) {

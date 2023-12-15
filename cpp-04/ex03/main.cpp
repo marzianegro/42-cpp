@@ -6,7 +6,7 @@
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 22:15:28 by mnegro            #+#    #+#             */
-/*   Updated: 2023/12/15 00:11:43 by mnegro           ###   ########.fr       */
+/*   Updated: 2023/12/15 18:32:48 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,119 +15,133 @@
 #include "Ice.hpp"
 #include "MateriaSource.hpp"
 
-void ft_tests()
+void	ft_tests(void)
 {
-	// Constructors
 	std::cout << std::endl;
 	std::cout << "CONSTRUCTORS:" << std::endl;
-	std::cout << "-----------------------" << std::endl;
+	std::cout << "----------" << std::endl;
 	IMateriaSource* src = new MateriaSource();
 	src->learnMateria(new Ice());
 	src->learnMateria(new Cure());
-	ICharacter* me = new Character("me");
-	std::cout << std::endl;	// Create Materia
+	ICharacter* Player1 = new Character("Player1");
+	std::cout << "----------" << std::endl;
+
+	std::cout << std::endl;
 	std::cout << "CREATE MATERIA:" << std::endl;
-	std::cout << "-----------------------" << std::endl;
+	std::cout << "----------" << std::endl;
 	AMateria	*tmp;
 	AMateria	*tmp1;
 	AMateria	*tmp2;
 	AMateria	*tmp3;
 	tmp = src->createMateria("ice");
-	me->equip(tmp);
+	Player1->equip(tmp);
 	tmp1 = src->createMateria("cure");
-	me->equip(tmp1);
-	tmp = src->createMateria("fire"); // null
-	me->equip(tmp);
-	std::cout << std::endl;	// Use on a new character
+	Player1->equip(tmp1); // _inventory[1]
+	tmp = src->createMateria("fire"); // invalid materia
+	Player1->equip(tmp);
+	std::cout << "----------" << std::endl;
+
+	std::cout << std::endl;
 	std::cout << "USE ON A NEW CHARACTER:" << std::endl;
-	std::cout << "-----------------------" << std::endl;
-	ICharacter* luigi = new Character("luigi");
-	me->use(0, *luigi);
-	me->use(1, *luigi);
+	std::cout << "----------" << std::endl;
+	ICharacter* Player2 = new Character("Player2");
+	Player1->use(0, *Player2);
+	Player1->use(1, *Player2);
 	std::cout << std::endl;
-	me->use(2, *luigi); // Use an empty / non existing slot in inventory
-	me->use(-4, *luigi);
-	std::cout << "-----------------------" << std::endl;
-	me->use(18, *luigi);
-	std::cout << std::endl;	// Deep copy character
+	Player1->use(2, *Player2); // using an empty slot in inventory
+	Player1->use(-4, *Player2); // using a non-existant slot in inventory
+	Player1->use(18, *Player2); // using a non-existant slot in inventory
+	std::cout << "----------" << std::endl;
+
+	std::cout << std::endl;
 	std::cout << "DEEP COPY CHARACTER:" << std::endl;
-	std::cout << "-----------------------" << std::endl;
-	Character	*charles = new Character("Charles");
+	std::cout << "----------" << std::endl;
+	Character	*Player3 = new Character("Player3");
 	tmp2 = src->createMateria("cure");
-	charles->equip(tmp2);
+	Player3->equip(tmp2);
 	tmp3 = src->createMateria("ice");
-	charles->equip(tmp3);
+	Player3->equip(tmp3);
 	tmp = src->createMateria("earth");
-	charles->equip(tmp);
-	Character	*charles_copy = new Character(*charles);
-	std::cout << std::endl;	// Deep copy vs its source character
+	Player3->equip(tmp);
+	Character	*Player3_copy = new Character(*Player3);
+	std::cout << "----------" << std::endl;
+
+	std::cout << std::endl;
 	std::cout << "DEEP COPY VS SOURCE:" << std::endl;
-	std::cout << "-----------------------" << std::endl;
-	charles->unequip(0); // this shows that they have different materia pointers equipped
-	// tmp4 = charles_copy->getMateriaFromInventory(1);
-	charles_copy->unequip(1); //this will produce a leak if we don't store the address somewhere else before
+	std::cout << "----------" << std::endl;
+	Player3->unequip(0); // this shows that they have different materia pointers equipped
+	delete tmp2;
+	AMateria *floor = Player3_copy->getMateria(1);
+	Player3_copy->unequip(1); // this will produce a leak if we don't store the address soPlayer1where else before
+	if (floor) {
+		delete floor;
+	}
 	tmp = src->createMateria("cure");
-	charles_copy->equip(tmp);
+	Player3_copy->equip(tmp);
 	tmp = src->createMateria("ice");
-	charles_copy->equip(tmp);
-	std::cout << std::endl;	charles->use(0, *luigi);
-	charles->use(1, *luigi);
-	charles->use(2, *luigi);
-	charles->use(3, *luigi);
+	Player3_copy->equip(tmp);
 	std::cout << std::endl;
-	charles_copy->use(0, *luigi);
-	charles_copy->use(1, *luigi);
-	charles_copy->use(2, *luigi);
-	charles_copy->use(3, *luigi);
-	std::cout << std::endl;	// Unequip tests:
+	Player3->use(0, *Player2);
+	Player3->use(1, *Player2);
+	Player3->use(2, *Player2);
+	Player3->use(3, *Player2);
+	std::cout << std::endl;
+	Player3_copy->use(0, *Player2);
+	Player3_copy->use(1, *Player2);
+	Player3_copy->use(2, *Player2);
+	Player3_copy->use(3, *Player2);
+	std::cout << "----------" << std::endl;
+
+	std::cout << std::endl;
 	std::cout << "UNEQUIP:" << std::endl;
-	std::cout << "-----------------------" << std::endl;
-	me->unequip(-1); // unequip an empty / non existing slot in inventory
-	me->unequip(18);
-	me->unequip(3);
+	std::cout << "----------" << std::endl;
+	Player1->unequip(-1); // unequipping a non-existant slot in inventory
+	Player1->unequip(18); // unequipping a non-existant slot in inventory
+	Player1->unequip(3); //  unequipping an empty slot in inventory
 	std::cout << std::endl;
-	me->use(1, *charles);
-	me->unequip(1); // Unequip a valid slot in inventory (cure unequipped)
-	me->use(1, *charles); // try to use it
-	std::cout << std::endl;	// Destructors
-	std::cout << "DESTRUCTORS:" << std::endl;
-	delete luigi;
-	delete me;
-	delete src;
-	delete charles;
-	delete charles_copy;
+	Player1->use(1, *Player3);
+	Player1->unequip(1);
 	delete tmp1;
-	std::cout << "-----------------------" << std::endl;
+	Player1->use(1, *Player3);
+	std::cout << "----------" << std::endl;
+
 	std::cout << std::endl;
-	//system("leaks ex03");
+	std::cout << "DESTRUCTORS:" << std::endl;
+	delete Player2;
+	delete Player1;
+	delete src;
+	delete Player3;
+	delete Player3_copy;
+	std::cout << "----------" << std::endl;
+	std::cout << std::endl;
 }
 
-int main()
+int	main(void)
 {
 	ft_tests();
-	// Leaks check
 	return (0);
 }
 
-// int main(void)
+// Main provided by the subject
+// int	main(void)
 // {
 // 	IMateriaSource* src = new MateriaSource();
 // 	src->learnMateria(new Ice());
 // 	src->learnMateria(new Cure());
-	
-// 	ICharacter* me = new Character("me");
-	
+
+// 	ICharacter* Player1 = new Character("Player1");
 // 	AMateria* tmp;
-//     tmp = src->createMateria("ice");
-//     me->equip(tmp);
-//     tmp = src->createMateria("cure");
-//     me->equip(tmp);
-	
-// 	ICharacter* luigi = new Character("luigi");
-	
-// 	me->use(0, *luigi);
-// 	me->use(1, *luigi);
-	
-// 	delete luigi; delete me; delete src;
+// 	tmp = src->createMateria("ice");
+// 	Player1->equip(tmp);
+// 	tmp = src->createMateria("cure");
+// 	Player1->equip(tmp);
+
+// 	ICharacter* Player2 = new Character("Player2");
+// 	Player1->use(0, *Player2);
+// 	Player1->use(1, *Player2);
+
+// 	delete Player2;
+// 	delete Player1;
+// 	delete src;	
 // 	return (0);
 // }

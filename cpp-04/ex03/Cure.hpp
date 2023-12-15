@@ -6,7 +6,7 @@
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 22:26:53 by mnegro            #+#    #+#             */
-/*   Updated: 2023/12/14 22:35:12 by mnegro           ###   ########.fr       */
+/*   Updated: 2023/12/15 16:27:36 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ public:
 
 	Cure&	operator=(const Cure &src); // ocf copy assignment operator
 
-	Cure*	clone() const;
+	AMateria*	clone() const;
 	void	use(ICharacter &target);
 };
 

@@ -6,7 +6,7 @@
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 22:28:43 by mnegro            #+#    #+#             */
-/*   Updated: 2023/12/15 00:01:37 by mnegro           ###   ########.fr       */
+/*   Updated: 2023/12/15 16:28:13 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ public:
 
 	Ice&	operator=(const Ice &src); // ocf copy assignment operator
 
-	Ice*	clone() const;
+	AMateria*	clone() const;
 	void	use(ICharacter &target);
 };
 

@@ -6,7 +6,7 @@
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 23:01:52 by mnegro            #+#    #+#             */
-/*   Updated: 2023/12/14 23:49:52 by mnegro           ###   ########.fr       */
+/*   Updated: 2023/12/15 16:21:13 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,10 @@ MateriaSource::MateriaSource(const MateriaSource &src) {
 }
 
 MateriaSource::~MateriaSource() {
+	for (int i = 0; i < 4; i++) {
+		delete this->_inventory[i];
+		this->_inventory[i] = NULL;
+	}
 	std::cout << "MateriaSource destructor called" << std::endl;
 }
 

@@ -6,20 +6,19 @@
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 22:30:08 by mnegro            #+#    #+#             */
-/*   Updated: 2023/12/15 00:10:35 by mnegro           ###   ########.fr       */
+/*   Updated: 2023/12/15 18:32:50 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cure.hpp"
 
-Cure::Cure() {
+Cure::Cure() : AMateria() {
 	std::cout << "Cure default constructor called" << std::endl;
 	this->_type = "cure";
 }
 
-Cure::Cure(const Cure &src) {
+Cure::Cure(const Cure &src) : AMateria(src) {
 	std::cout << "Cure copy constructor called" << std::endl;
-	this->_type = src._type;
 }
 
 Cure::~Cure() {
@@ -33,7 +32,8 @@ Cure&	Cure::operator=(const Cure &src) {
 	return (*this);
 }
 
-Cure*	Cure::clone() const {
+// check this
+AMateria*	Cure::clone() const {
 	return (new Cure());
 }
 

@@ -6,7 +6,7 @@
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 23:36:09 by mnegro            #+#    #+#             */
-/*   Updated: 2023/12/14 23:51:58 by mnegro           ###   ########.fr       */
+/*   Updated: 2023/12/15 16:21:13 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ public:
 
 	MateriaSource&	operator=(const MateriaSource &src); // ocf copy assignment operator
 
-	void	learnMateria(AMateria*);
-	AMateria*	createMateria(std::string const &type);
+	virtual void	learnMateria(AMateria*);
+	virtual AMateria*	createMateria(std::string const &type);
 
 private:
 

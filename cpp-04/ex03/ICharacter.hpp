@@ -6,7 +6,7 @@
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 22:37:27 by mnegro            #+#    #+#             */
-/*   Updated: 2023/12/14 23:56:33 by mnegro           ###   ########.fr       */
+/*   Updated: 2023/12/15 18:08:29 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ public:
 	virtual void	equip(AMateria *m) = 0;
 	virtual void	unequip(int idx) = 0;
 	virtual void	use(int idx, ICharacter &target) = 0;
+	virtual AMateria*	getMateria(int idx) = 0;
 };
 
 #endif

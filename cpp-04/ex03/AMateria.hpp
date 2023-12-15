@@ -6,7 +6,7 @@
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 22:16:00 by mnegro            #+#    #+#             */
-/*   Updated: 2023/12/15 00:08:35 by mnegro           ###   ########.fr       */
+/*   Updated: 2023/12/15 16:01:35 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ public:
 
 	AMateria&	operator=(const AMateria &src); // ocf copy assignment operator
 
-	std::string const& getType() const; // returns the materia type
+	std::string const& getType() const;
 
 	virtual AMateria*	clone() const = 0;
 	virtual void	use(ICharacter &target);

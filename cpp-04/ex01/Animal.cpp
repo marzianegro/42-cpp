@@ -6,7 +6,7 @@
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 10:08:35 by mnegro            #+#    #+#             */
-/*   Updated: 2023/12/14 15:02:36 by mnegro           ###   ########.fr       */
+/*   Updated: 2023/12/15 15:06:22 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ Animal::Animal() {
 
 Animal::Animal(const Animal &src) {
 	std::cout << "Animal copy constructor called" << std::endl;
-	this->_type = src._type;
+	*this = src;
 }
 
 Animal::~Animal() {
