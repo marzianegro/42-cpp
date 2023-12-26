@@ -6,7 +6,7 @@
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 10:34:02 by mnegro            #+#    #+#             */
-/*   Updated: 2023/12/25 15:48:28 by mnegro           ###   ########.fr       */
+/*   Updated: 2023/12/26 18:42:13 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,13 @@
 
 #include <iostream>
 
+class Form; // forward declaration
+
 class	Bureaucrat {
 
 public:
 
-	Bureaucrat(std::string name, int grade); // ocf default constructor
+	Bureaucrat(std::string name, int grade); // ocf constructor
 	Bureaucrat(const Bureaucrat &src); // ocf copy constructor
 	~Bureaucrat(); // ocf destructor
 
@@ -45,6 +47,8 @@ public:
         	return "Grade too low!";
 		}
 	};
+
+	void	signForm(Form &obj);
 
 private:
 
