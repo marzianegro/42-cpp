@@ -6,7 +6,7 @@
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/25 15:35:15 by mnegro            #+#    #+#             */
-/*   Updated: 2023/12/26 18:43:55 by mnegro           ###   ########.fr       */
+/*   Updated: 2023/12/26 18:57:27 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,10 @@
 #include "Form.hpp"
 
 Form::Form(std::string name, int toSign, int toExecute) : _name(name), _signed(false), _toSign(toSign), _toExecute(toExecute) {
+	if (this->_toSign < 1 || this->_toExecute < 1)
+		throw GradeTooHighException();
+	else if (this->_toSign > 150 || this->_toExecute > 150)
+		throw GradeTooLowException();
 	return;
 }
 
