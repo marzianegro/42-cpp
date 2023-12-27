@@ -6,7 +6,7 @@
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 12:15:32 by mnegro            #+#    #+#             */
-/*   Updated: 2023/12/27 15:26:40 by mnegro           ###   ########.fr       */
+/*   Updated: 2023/12/27 15:41:18 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ bool	AForm::beSigned(Bureaucrat const &obj) {
 }
 
 bool	AForm::checkForm(Bureaucrat const &executor) const {
-	if (!this->beSigned(executor)) {
+	if (!beSigned(executor)) { // COME SI FAAA PERCHÉ NON VAAA
 		try {
 			throw Bureaucrat::GradeTooLowException();
 		} catch (const Bureaucrat::GradeTooLowException &e) {
