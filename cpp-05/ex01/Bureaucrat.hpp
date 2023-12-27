@@ -6,7 +6,7 @@
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 10:34:02 by mnegro            #+#    #+#             */
-/*   Updated: 2023/12/27 11:59:20 by mnegro           ###   ########.fr       */
+/*   Updated: 2023/12/27 15:20:40 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ public:
 	void		incrementGrade();
 	void		decrementGrade();
 
+	void	signForm(Form &obj);
+
 	class	GradeTooHighException : public std::exception {
 	
 	public:
@@ -47,8 +49,6 @@ public:
         	return "Grade too low!";
 		}
 	};
-
-	void	signForm(Form &obj);
 
 private:
 

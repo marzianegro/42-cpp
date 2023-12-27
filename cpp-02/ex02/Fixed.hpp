@@ -6,7 +6,7 @@
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 11:10:43 by mnegro            #+#    #+#             */
-/*   Updated: 2023/12/12 13:41:36 by mnegro           ###   ########.fr       */
+/*   Updated: 2023/12/27 15:34:10 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@
 class Fixed {
 
 public:
-
 	Fixed(); // ocf default constructor
 	Fixed(const Fixed &src); // ocf copy constructor
 	Fixed(const int val);
@@ -52,18 +51,20 @@ public:
 	Fixed	operator--(int);
 
 	int	getRawBits(void) const;
+
 	void setRawBits(int const raw);
-	float toFloat(void) const;
-	int toInt(void) const;
-	static Fixed&	min(Fixed &val1, Fixed &val2);
+
+	float	toFloat(void) const;
+	int		toInt(void) const;
+
+	static Fixed&		min(Fixed &val1, Fixed &val2);
 	static const Fixed&	min(const Fixed &val1, const Fixed &val2);
-	static Fixed&	max(Fixed &val1, Fixed &val2);
+	static Fixed&		max(Fixed &val1, Fixed &val2);
 	static const Fixed&	max(const Fixed &val1, const Fixed &val2);
 
 private:
-
-	int _fixedPoint;
-	static const int _FractBits = 8;
+	int 				_fixedPoint;
+	static const int	_FractBits = 8;
 };
 
 std::ostream& operator<<(std::ostream &os, const Fixed &obj);

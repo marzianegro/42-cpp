@@ -6,7 +6,7 @@
 #    By: mnegro <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/24 18:25:21 by mnegro            #+#    #+#              #
-#    Updated: 2023/12/12 10:27:58 by mnegro           ###   ########.fr        #
+#    Updated: 2023/12/27 15:31:41 by mnegro           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 RM = rm -f
 
 #### TARGETS ####
-SRCS = contact.class.cpp main.cpp phonebook.class.cpp
+SRCS = Contact.cpp main.cpp PhoneBook.cpp
 
 OBJS = ${SRCS:.cpp=.o}
 

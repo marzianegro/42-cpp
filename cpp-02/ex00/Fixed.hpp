@@ -6,7 +6,7 @@
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 11:10:43 by mnegro            #+#    #+#             */
-/*   Updated: 2023/12/12 13:21:25 by mnegro           ###   ########.fr       */
+/*   Updated: 2023/12/27 15:34:22 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@
 class	Fixed {
 
 public:
-
 	Fixed(); // ocf default constructor
 	Fixed(const Fixed &src); // ocf copy constructor
 	~Fixed(); // ocf destructor
@@ -30,11 +29,11 @@ public:
 	Fixed&	operator=(const Fixed &src); // ocf copy assignment operator
 	
 	int	getRawBits(void) const;
+
 	void	setRawBits(int const raw);
 
 private:
-
-	int	_fixedPoint;
+	int					_fixedPoint;
 	static const int	_FractBits = 8;
 };
 

@@ -6,7 +6,7 @@
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 10:08:48 by mnegro            #+#    #+#             */
-/*   Updated: 2023/12/14 22:13:09 by mnegro           ###   ########.fr       */
+/*   Updated: 2023/12/27 15:37:52 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@
 class	Cat : public AAnimal {
 
 public:
-
 	Cat(); // ocf default constructor
 	Cat(const Cat &src); // ocf copy constructor
 	virtual ~Cat(); // ocf destructor
@@ -29,7 +28,6 @@ public:
 	void	makeSound() const;
 
 private:
-
 	Brain*	_brain;
 };
 

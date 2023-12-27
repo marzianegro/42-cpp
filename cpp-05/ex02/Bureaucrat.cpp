@@ -6,7 +6,7 @@
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 10:33:54 by mnegro            #+#    #+#             */
-/*   Updated: 2023/12/27 13:01:35 by mnegro           ###   ########.fr       */
+/*   Updated: 2023/12/27 15:25:28 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void	Bureaucrat::decrementGrade() {
 		throw GradeTooLowException();
 }
 
-void	Bureaucrat::signForm(AForm &form) {
+void	Bureaucrat::signForm(AForm &form) const {
 	try {
 		form.beSigned(*this);
 		std::cout << this->_name << " signed " << form.getName() << std::endl;
@@ -65,7 +65,7 @@ void	Bureaucrat::signForm(AForm &form) {
 	}
 }
 
-void	Bureaucrat::executeForm(AForm const &form) {
+void	Bureaucrat::executeForm(AForm const &form) const {
 	try {
 		if (this.getGrade() <= form.getExecutingGrade()) {
 			std::cout << this->_name << " executed " << form.getName() << std::endl;

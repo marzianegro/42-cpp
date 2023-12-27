@@ -6,7 +6,7 @@
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 22:16:00 by mnegro            #+#    #+#             */
-/*   Updated: 2023/12/15 16:01:35 by mnegro           ###   ########.fr       */
+/*   Updated: 2023/12/27 15:38:11 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ class	ICharacter;
 class	AMateria {
 
 public:
-
 	AMateria(); // ocf default constructor
 	AMateria(const AMateria &src); // ocf copy constructor
 	AMateria(std::string const &type);
@@ -32,10 +31,9 @@ public:
 	std::string const& getType() const;
 
 	virtual AMateria*	clone() const = 0;
-	virtual void	use(ICharacter &target);
+	virtual void		use(ICharacter &target);
 
 protected:
-
 	std::string	_type;
 };
 

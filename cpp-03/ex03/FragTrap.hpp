@@ -6,7 +6,7 @@
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 19:01:10 by mnegro            #+#    #+#             */
-/*   Updated: 2023/12/13 13:30:07 by mnegro           ###   ########.fr       */
+/*   Updated: 2023/12/27 15:36:39 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 class	FragTrap : virtual public ClapTrap {
 
 public:
-
 	FragTrap(); // ocf default constructor
 	FragTrap(const FragTrap &src); // ocf copy constructor
 	FragTrap(const std::string &name);

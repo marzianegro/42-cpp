@@ -6,7 +6,7 @@
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 11:38:27 by mnegro            #+#    #+#             */
-/*   Updated: 2023/12/09 19:24:30 by mnegro           ###   ########.fr       */
+/*   Updated: 2023/12/27 15:32:14 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 class Zombie {
 
 public:
-
 	Zombie();
 	~Zombie();
 
@@ -26,7 +25,6 @@ public:
 	void	setName(std::string name);
 
 private:
-
 	std::string	_name;
 };
 

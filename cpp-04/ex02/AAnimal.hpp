@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   AAnimal.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 10:03:12 by mnegro            #+#    #+#             */
-/*   Updated: 2023/12/14 22:10:51 by mnegro           ###   ########.fr       */
+/*   Updated: 2023/12/27 15:37:45 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,18 +30,16 @@
 class	AAnimal {
 
 public:
-
 	AAnimal(); // ocf default constructor
 	AAnimal(const AAnimal &src); // ocf copy constructor
 	virtual ~AAnimal(); // ocf destructor
 
 	AAnimal&	operator=(const AAnimal &src); // ocf copy assignment operator
 
-	std::string	getType() const;
+	std::string		getType() const;
 	virtual	void	makeSound() const = 0;
 
 protected:
-
 	std::string	_type;
 };
 

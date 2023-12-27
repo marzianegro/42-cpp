@@ -6,7 +6,7 @@
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 12:15:32 by mnegro            #+#    #+#             */
-/*   Updated: 2023/12/27 12:36:24 by mnegro           ###   ########.fr       */
+/*   Updated: 2023/12/27 15:26:40 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,16 +57,25 @@ int	AForm::getExecutingGrade() const {
 
 }
 
-void	AForm::beSigned(const Bureaucrat &obj) {
-	try {
-		if (obj.getGrade() <= this->_toSign) {
-			this->_signed = true;
-		} else {
-			throw AForm::GradeTooLowException();
-		}
-	} catch (const AForm::GradeTooLowException &e) {
-		std::cout << e.what() << std::endl;
+bool	AForm::beSigned(Bureaucrat const &obj) {
+	if (obj.getGrade() <= this->_toSign) {
+		this->_signed = true;
+		return (true);
+	} else {
+		return (false);
 	}
+}
+
+bool	AForm::checkForm(Bureaucrat const &executor) const {
+	if (!this->beSigned(executor)) {
+		try {
+			throw Bureaucrat::GradeTooLowException();
+		} catch (const Bureaucrat::GradeTooLowException &e) {
+			std::cout << e.what() << std::endl;
+			return (false);
+		}
+	}
+	return (true);
 }
 
 std::ostream&	operator<<(std::ostream &os, const AForm &obj) {

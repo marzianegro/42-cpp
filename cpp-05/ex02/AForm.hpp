@@ -6,7 +6,7 @@
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/25 15:35:21 by mnegro            #+#    #+#             */
-/*   Updated: 2023/12/27 13:23:37 by mnegro           ###   ########.fr       */
+/*   Updated: 2023/12/27 15:23:55 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,10 @@ public:
 	int			getSigningGrade() const;
 	int			getExecutingGrade() const;
 
-	void	beSigned(const Bureaucrat &obj);
+	bool			beSigned(Bureaucrat const &obj);
+	bool			checkForm(Bureaucrat const &executor) const;
 	virtual void	execute(Bureaucrat const &executor) const = 0;
+	virtual void	executeAction(Bureaucrat const &executor) const = 0;
 
 	class	GradeTooLowException : public std::exception {
 	

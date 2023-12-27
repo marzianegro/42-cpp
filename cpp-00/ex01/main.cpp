@@ -6,12 +6,12 @@
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 15:02:05 by mnegro            #+#    #+#             */
-/*   Updated: 2023/12/11 13:21:40 by mnegro           ###   ########.fr       */
+/*   Updated: 2023/12/27 15:31:27 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "contact.class.hpp"
-#include "phonebook.class.hpp"
+#include "Contact.hpp"
+#include "PhoneBook.hpp"
 
 int main(void)
 {

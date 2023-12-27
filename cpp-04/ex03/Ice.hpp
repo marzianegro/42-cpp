@@ -6,7 +6,7 @@
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 22:28:43 by mnegro            #+#    #+#             */
-/*   Updated: 2023/12/15 16:28:13 by mnegro           ###   ########.fr       */
+/*   Updated: 2023/12/27 15:38:36 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 class	Ice : public AMateria {
 
 public:
-
 	Ice(); // ocf default constructor
 	Ice(const Ice &src); // ocf copy constructor
 	~Ice(); // ocf destructor
@@ -26,7 +25,7 @@ public:
 	Ice&	operator=(const Ice &src); // ocf copy assignment operator
 
 	AMateria*	clone() const;
-	void	use(ICharacter &target);
+	void		use(ICharacter &target);
 };
 
 #endif

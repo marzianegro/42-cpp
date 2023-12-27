@@ -6,7 +6,7 @@
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 19:01:16 by mnegro            #+#    #+#             */
-/*   Updated: 2023/12/13 13:30:08 by mnegro           ###   ########.fr       */
+/*   Updated: 2023/12/27 15:36:43 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 class	ScavTrap : virtual public ClapTrap {
 
 public:
-
 	ScavTrap(); // ocf default constructor
 	ScavTrap(const ScavTrap &src); // ocf copy constructor
 	ScavTrap(const std::string &name);

@@ -6,7 +6,7 @@
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 22:26:53 by mnegro            #+#    #+#             */
-/*   Updated: 2023/12/15 16:27:36 by mnegro           ###   ########.fr       */
+/*   Updated: 2023/12/27 15:38:32 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 class	Cure : public AMateria {
 
 public:
-
 	Cure(); // ocf default constructor
 	Cure(const Cure &src); // ocf copy constructor
 	~Cure(); // ocf destructor
@@ -26,7 +25,7 @@ public:
 	Cure&	operator=(const Cure &src); // ocf copy assignment operator
 
 	AMateria*	clone() const;
-	void	use(ICharacter &target);
+	void		use(ICharacter &target);
 };
 
 #endif

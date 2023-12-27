@@ -6,7 +6,7 @@
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 12:51:14 by mnegro            #+#    #+#             */
-/*   Updated: 2023/12/15 15:10:58 by mnegro           ###   ########.fr       */
+/*   Updated: 2023/12/27 15:37:39 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 class	WrongCat : public WrongAnimal {
 
 public:
-
 	WrongCat(); // ocf default constructor
 	WrongCat(const WrongCat &src); // ocf copy constructor
 	virtual ~WrongCat(); // ocf destructor
