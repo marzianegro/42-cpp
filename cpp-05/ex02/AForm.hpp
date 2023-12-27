@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.hpp                                           :+:      :+:    :+:   */
+/*   AForm.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/25 15:35:21 by mnegro            #+#    #+#             */
-/*   Updated: 2023/12/27 12:02:26 by mnegro           ###   ########.fr       */
+/*   Updated: 2023/12/27 13:23:37 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,16 @@
 
 class Bureaucrat; // forward declaration
 
-class	Form {
+class	AForm {
 
 public:
 
-	Form(std::string name, int toSign, int toExecute); // ocf default constructor
-	Form(const Form &src); // ocf copy constructor
-	~Form(); // ocf destructor
+	AForm(); // ocf default constructor
+	AForm(std::string name, int toSign, int toExecute);
+	AForm(const AForm &src); // ocf copy constructor
+	virtual ~AForm(); // ocf destructor
 
-	Form&	operator=(const Form &src); // ocf copy assignment operator
+	AForm&	operator=(const AForm &src); // ocf copy assignment operator
 
 	std::string	getName() const;
 	bool		getWhetherSigned() const;
@@ -32,6 +33,7 @@ public:
 	int			getExecutingGrade() const;
 
 	void	beSigned(const Bureaucrat &obj);
+	virtual void	execute(Bureaucrat const &executor) const = 0;
 
 	class	GradeTooLowException : public std::exception {
 	
@@ -59,4 +61,4 @@ private:
 
 };
 
-std::ostream&	operator<<(std::ostream &os, const Form &obj);
+std::ostream&	operator<<(std::ostream &os, const AForm &obj);

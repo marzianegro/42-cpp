@@ -6,7 +6,7 @@
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 10:34:02 by mnegro            #+#    #+#             */
-/*   Updated: 2023/12/27 11:59:20 by mnegro           ###   ########.fr       */
+/*   Updated: 2023/12/27 12:58:54 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 #include <iostream>
 
-class Form; // forward declaration
+class AForm; // forward declaration
 
 class	Bureaucrat {
 
@@ -48,7 +48,8 @@ public:
 		}
 	};
 
-	void	signForm(Form &obj);
+	void	signForm(AForm &form);
+	void	executeForm(AForm const &form);
 
 private:
 

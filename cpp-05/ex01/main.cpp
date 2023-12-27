@@ -6,7 +6,7 @@
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 10:33:41 by mnegro            #+#    #+#             */
-/*   Updated: 2023/12/26 18:58:45 by mnegro           ###   ########.fr       */
+/*   Updated: 2023/12/27 11:52:46 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,31 +46,26 @@ int	main(void)
 
 	std::cout << "Signing Forms" << std::endl;
 	std::cout << "---------------------" << std::endl;
-
 	std::cout << "----------" << std::endl;
 	std::cout << "Attempting to sign -> " << A13 << std::endl;
-	// A13.beSigned(A_ref);
 	A_ref.signForm(A13);
 	std::cout << "Form A13 successfully signed by " << A_ref;
 	std::cout << "----------" << std::endl << std::endl;
 
 	std::cout << "----------" << std::endl;
 	std::cout << "Attempting to sign -> " << A13 << std::endl;
-	// A13.beSigned(B_ref);
 	B_ref.signForm(A13);
 	std::cout << "Form A13 signing failed by " << B_ref;	
 	std::cout << "----------" << std::endl << std::endl;
 
 	std::cout << "----------" << std::endl;
 	std::cout << "Attempting to sign -> " << B97 << std::endl;
-	// B97.beSigned(A);
 	A.signForm(B97);
 	std::cout << "Form B97 successfully signed by " << A;
 	std::cout << "----------" << std::endl << std::endl;
 
 	std::cout << "----------" << std::endl;
 	std::cout << "Attempting to sign -> " << B97 << std::endl;
-	// B97.beSigned(B);
 	B.signForm(B97);
 	std::cout << "Form B97 successfully signed by " << B;
 	std::cout << "----------" << std::endl;

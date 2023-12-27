@@ -6,7 +6,7 @@
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 10:34:02 by mnegro            #+#    #+#             */
-/*   Updated: 2023/12/25 15:48:28 by mnegro           ###   ########.fr       */
+/*   Updated: 2023/12/27 12:02:09 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ public:
 	Bureaucrat	operator=(const Bureaucrat &src); // ocf copy assignment operator
 
 	std::string	getName() const;
-	int	getGrade() const;
-	void	incrementGrade();
-	void	decrementGrade();
+	int			getGrade() const;
+	void		incrementGrade();
+	void		decrementGrade();
 
 	class	GradeTooHighException : public std::exception {
 	
@@ -49,7 +49,7 @@ public:
 private:
 
 	const std::string	_name;
-	int	_grade;
+	int					_grade;
 };
 
 std::ostream&	operator<<(std::ostream &os, const Bureaucrat &obj);
