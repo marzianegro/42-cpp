@@ -6,11 +6,12 @@
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 12:03:45 by mnegro            #+#    #+#             */
-/*   Updated: 2023/12/27 15:12:16 by mnegro           ###   ########.fr       */
+/*   Updated: 2023/12/27 21:31:32 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AForm.hpp"
+#include "Bureaucrat.hpp"
 #include "RobotomyRequestForm.hpp"
 
 RobotomyRequestForm::RobotomyRequestForm() : AForm(), _target("randomPlace") {
@@ -37,16 +38,13 @@ RobotomyRequestForm&	RobotomyRequestForm::operator=(const RobotomyRequestForm &s
 };
 
 void	RobotomyRequestForm::execute(Bureaucrat const &executor) const {
-	if (!checkForm(executor)) {
-		return ;
+	checkFormForExec(executor);
+	std::cout << "* LOUD AND UNBEARABLE DRILLING NOISE *" << std::endl;
+	srand(time(0));
+	int	n = rand();
+	if (n % 2 == 0) {
+		std::cout << "Oh well, " << this->_target << " has been successfully robotomized!" << std::endl;
 	} else {
-		std::cout << "* LOUD AND UNBEARABLE DRILLING NOISE *" << std::endl;
-		static int	n;
-		if (n % 2 == 0) {
-			std::cout << "Oh well, " << this->_target << " has been successfully robotomized!" << std::endl;
-		} else {
-			std::cout << "Phew, " << this->_target << "'s robomy has failed!" << std::endl;
-		}
-		n++;
+		std::cout << "Phew, " << this->_target << "'s robomy has failed!" << std::endl;
 	}
 }

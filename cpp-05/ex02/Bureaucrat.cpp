@@ -6,11 +6,11 @@
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 10:33:54 by mnegro            #+#    #+#             */
-/*   Updated: 2023/12/27 15:25:28 by mnegro           ###   ########.fr       */
+/*   Updated: 2023/12/27 21:47:25 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "AAForm.hpp"
+#include "AForm.hpp"
 #include "Bureaucrat.hpp"
 
 Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name), _grade(grade) {
@@ -67,13 +67,11 @@ void	Bureaucrat::signForm(AForm &form) const {
 
 void	Bureaucrat::executeForm(AForm const &form) const {
 	try {
-		if (this.getGrade() <= form.getExecutingGrade()) {
-			std::cout << this->_name << " executed " << form.getName() << std::endl;
-		} else {
-			throw Bureaucrat::GradeTooLowException();
-		}
+		form.execute(*this);
 	} catch (const Bureaucrat::GradeTooLowException &e) {
-		std::cout << this->_name << " couldn't sign " << form.getName() << ", because requirements were not met" << std::endl;
+		std::cout << this->_name << " couldn't sign " << form.getName() << ", because " << this->_name << "'s grade is too low" << std::endl;
+	} catch (const AForm::FormNotSignedException &e) {
+		std::cout << this->_name << " couldn't sign " << form.getName() << ", because it's not signed" << std::endl;
 	}
 }
 

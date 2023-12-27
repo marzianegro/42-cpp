@@ -6,7 +6,7 @@
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 12:03:45 by mnegro            #+#    #+#             */
-/*   Updated: 2023/12/27 14:49:01 by mnegro           ###   ########.fr       */
+/*   Updated: 2023/12/27 21:32:58 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ PresidentialPardonForm::PresidentialPardonForm() : AForm(), _target("randomPlace
 	std::cout << "PresidentialPardonForm default constructor called" << std::endl; 
 }
 
-PresidentialPardonForm::PresidentialPardonForm(std::string target) : AForm("PresidentialPardonForm", 145, 147), _target(target) {
+PresidentialPardonForm::PresidentialPardonForm(std::string target) : AForm("PresidentialPardonForm", 25, 5), _target(target) {
 	std::cout << "PresidentialPardonForm parametric constructor called" << std::endl;
 }
 
@@ -36,4 +36,6 @@ PresidentialPardonForm&	PresidentialPardonForm::operator=(const PresidentialPard
 };
 
 void	PresidentialPardonForm::execute(Bureaucrat const &executor) const {
+	checkFormForExec(executor);
+	std::cout << this->_target << " has been pardoned by Zaphod Bebblebrox" << std::endl;
 }

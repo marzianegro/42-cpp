@@ -6,7 +6,7 @@
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 12:03:45 by mnegro            #+#    #+#             */
-/*   Updated: 2023/12/27 13:23:37 by mnegro           ###   ########.fr       */
+/*   Updated: 2023/12/27 21:53:29 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,4 +36,28 @@ ShrubberyCreationForm&	ShrubberyCreationForm::operator=(const ShrubberyCreationF
 };
 
 void	ShrubberyCreationForm::execute(Bureaucrat const &executor) const {
+	(void)executor;
+	std::string		filename = this->_target + "_shrubbery";
+	std::ofstream	file(filename);
+	if (!file.is_open()) {
+        std::cout << "Error: can't create file" << std::endl;
+        return ;
+	} else {
+		file << "	       .     .  .      +     .      .          ." << std::endl;
+		file << "     .       .      .     #       .           ." << std::endl;
+		file << "        .      .         ###            .      .      ." << std::endl;
+		file << "      .      .    #:. .:##@##:. .:#   .      ." << std::endl;
+		file << "          .      .  ####@###@####   ." << std::endl;
+		file << "       .      #:.    .:#@###@#:.    .:#   .        .       ." << std::endl;
+		file << "  .              #########@#########         .        ." << std::endl;
+		file << "        .     #:.   ####@###@####   .:#    .       ." << std::endl;
+		file << "     .     .   #######@@##@##@@#######                   ." << std::endl;
+		file << "                . ##@#####@#####@##            .      ." << std::endl;
+		file << "    .    #:. ...  .:##@###@###@##:.  ... .:#      ." << std::endl;
+		file << "      .      #######@##@#####@##@#######       .     ." << std::endl;
+		file << "    .    .      #####@@#######@@#####     .      ." << std::endl;
+		file << "            .            000           .     ." << std::endl;
+		file << "       .         .   .   000     .        .       ." << std::endl;
+		file << ".. .. ..................O000O........................ ...... ..." << std::endl;
+	}
 }

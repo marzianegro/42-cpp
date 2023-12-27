@@ -6,7 +6,7 @@
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 12:15:32 by mnegro            #+#    #+#             */
-/*   Updated: 2023/12/27 15:41:18 by mnegro           ###   ########.fr       */
+/*   Updated: 2023/12/27 21:25:14 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,25 +57,26 @@ int	AForm::getExecutingGrade() const {
 
 }
 
-bool	AForm::beSigned(Bureaucrat const &obj) {
-	if (obj.getGrade() <= this->_toSign) {
-		this->_signed = true;
-		return (true);
-	} else {
-		return (false);
+void	AForm::beSigned(const Bureaucrat &obj) {
+	try {
+		if (obj.getGrade() <= this->_toSign) {
+			this->_signed = true;
+		} else {
+			throw AForm::GradeTooLowException();
+		}
+	} catch (const AForm::GradeTooLowException &e) {
+		std::cout << e.what() << std::endl;
 	}
 }
 
-bool	AForm::checkForm(Bureaucrat const &executor) const {
-	if (!beSigned(executor)) { // COME SI FAAA PERCHÉ NON VAAA
-		try {
-			throw Bureaucrat::GradeTooLowException();
-		} catch (const Bureaucrat::GradeTooLowException &e) {
-			std::cout << e.what() << std::endl;
-			return (false);
-		}
+void	AForm::checkFormForExec(Bureaucrat const &executor) const {
+	if (!this->_signed) {
+		throw AForm::FormNotSignedException(); // da fare
+	} else if (executor.getGrade() > this->_toExecute) {
+		throw Bureaucrat::GradeTooLowException();
+	} else {
+		return ;
 	}
-	return (true);
 }
 
 std::ostream&	operator<<(std::ostream &os, const AForm &obj) {
