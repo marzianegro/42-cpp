@@ -6,7 +6,7 @@
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 10:34:02 by mnegro            #+#    #+#             */
-/*   Updated: 2023/12/27 15:39:19 by mnegro           ###   ########.fr       */
+/*   Updated: 2023/12/29 02:21:30 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@
 class	Bureaucrat {
 
 public:
-	Bureaucrat(std::string name, int grade); // ocf default constructor
+	Bureaucrat(); // ocf default constructor
+	Bureaucrat(std::string name, int grade);
 	Bureaucrat(const Bureaucrat &src); // ocf copy constructor
 	~Bureaucrat(); // ocf destructor
 
@@ -30,15 +31,15 @@ public:
 
 	// Exceptions
 	class	GradeTooHighException : public std::exception {
+	
 	public:
-
 		const char* what() const throw() {
        		return "Grade too high!";
 		}
 	};
 	class	GradeTooLowException : public std::exception {
+	
 	public:
-
 		const char* what() const throw() {
         	return "Grade too low!";
 		}

@@ -6,7 +6,7 @@
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 10:33:54 by mnegro            #+#    #+#             */
-/*   Updated: 2023/12/29 02:23:44 by mnegro           ###   ########.fr       */
+/*   Updated: 2023/12/29 02:26:19 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ Bureaucrat::Bureaucrat() {
 }
 
 Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name), _grade(grade) {
-	std::cout << "Bureaucrat parametric constructor called" << std::endl;
+	std::cout << "Bureaucrat copy constructor called" << std::endl;
 	if (grade < 1)
 		throw GradeTooHighException();
 	else if (grade > 150)
@@ -32,7 +32,7 @@ Bureaucrat::Bureaucrat(const Bureaucrat &src) : _name(src._name) {
 }
 
 Bureaucrat::~Bureaucrat() {
-	std::cout << "Bureaucrat destructor called" << std::endl;
+	std::cout << "AForm destructor called" << std::endl;
 }
 
 Bureaucrat	Bureaucrat::operator=(const Bureaucrat &src) {

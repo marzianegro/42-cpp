@@ -6,13 +6,18 @@
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 10:33:54 by mnegro            #+#    #+#             */
-/*   Updated: 2023/12/25 15:19:04 by mnegro           ###   ########.fr       */
+/*   Updated: 2023/12/29 02:20:10 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
+Bureaucrat::Bureaucrat() {
+	std::cout << "Bureaucrat default constructor called" << std::endl;
+}
+
 Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name), _grade(grade) {
+	std::cout << "Bureaucrat parametric constructor called" << std::endl;
 	if (grade < 1)
 		throw GradeTooHighException();
 	else if (grade > 150)
@@ -21,11 +26,12 @@ Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name), _grade(grade)
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat &src) {
+	std::cout << "Bureaucrat copy constructor called" << std::endl;
 	*this = src;
 }
 
 Bureaucrat::~Bureaucrat() {
-	return ;
+	std::cout << "Bureaucrat destructor called" << std::endl;
 }
 
 Bureaucrat	Bureaucrat::operator=(const Bureaucrat &src) {

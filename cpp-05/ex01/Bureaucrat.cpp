@@ -6,12 +6,16 @@
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 10:33:54 by mnegro            #+#    #+#             */
-/*   Updated: 2023/12/28 15:31:58 by mnegro           ###   ########.fr       */
+/*   Updated: 2023/12/29 02:20:54 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
+
+Bureaucrat::Bureaucrat() {
+	std::cout << "Bureaucrat default constructor called" << std::endl;
+}
 
 Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name), _grade(grade) {
 	if (grade < 1)

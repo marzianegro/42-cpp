@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PresidentialPardonForm.hpp                         :+:      :+:    :+:   */
+/*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 12:03:36 by mnegro            #+#    #+#             */
-/*   Updated: 2023/12/29 02:23:54 by mnegro           ###   ########.fr       */
+/*   Updated: 2023/12/29 02:26:43 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,17 @@
 
 #include "AForm.hpp"
 #include <iostream>
+#include <fstream>
 
-class	PresidentialPardonForm : public AForm {
+class	ShrubberyCreationForm : public AForm {
 
 public:
-	PresidentialPardonForm(); // ocf default constructor
-	PresidentialPardonForm(std::string target);
-	PresidentialPardonForm(const PresidentialPardonForm &src); // ocf copy constructor
-	~PresidentialPardonForm(); // ocf destructor
+	ShrubberyCreationForm(); // ocf constructor
+	ShrubberyCreationForm(std::string target);
+	ShrubberyCreationForm(const ShrubberyCreationForm &src); // ocf copy constructor
+	~ShrubberyCreationForm(); // ocf destructor
 
-	PresidentialPardonForm&	operator=(const PresidentialPardonForm &src); // ocf copy assignment operator
+	ShrubberyCreationForm&	operator=(const ShrubberyCreationForm &src); // ocf copy assignment operator
 
 	void	execute(Bureaucrat const &executor) const;
 
