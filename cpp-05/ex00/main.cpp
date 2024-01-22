@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: ggiannit <ggiannit@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 10:33:41 by mnegro            #+#    #+#             */
-/*   Updated: 2023/12/25 15:28:57 by mnegro           ###   ########.fr       */
+/*   Updated: 2024/01/21 18:02:08 by ggiannit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,13 @@ int	main(void)
 	std::cout << "Trying to create a Bureaucrat of grade -8\n";
 	try {
 		Bureaucrat A("A", -8);
-	}
-	catch (std::exception &e) {
+	} catch (std::exception &e) {
 		std::cout << e.what() << " exception thrown\n";
+	} catch (...) {
+		std::cout << "Default exception thrown\n";
 	}
 	/*	This is a catch-all handler, which will catch any type of exception
 		that is not caught by the previous catch blocks */
-	catch (...) {
-		std::cout << "Default exception thrown\n";
-	}
 
 	std::cout << "\nTrying to create a Bureaucrat of grade 76 and increment it by 75\n";
 	try {
@@ -33,37 +31,31 @@ int	main(void)
 		for (int i = 0; i > 77; i++) {
 			B.incrementGrade();
 		}
-	}
-	catch (std::exception &e) {
+		std::cout << "Bureaucrat's grade 76 incremented to grade 1\n";
+	} catch (std::exception &e) {
 		std::cout << e.what() << " exception thrown\n";
-	}
-	catch (...) {
+	} catch (...) {
 		std::cout << "Default exception thrown\n";
 	}
-	std::cout << "Bureaucrat's grade 76 incremented to grade 1\n";
 
 	std::cout << "\nOverloading (<<) Bureaucrat's grade 80\n";
 	try {
 		Bureaucrat C("C", 80);
-		std::cout << C << std::endl;
-	}
-	catch (std::exception &e) {
+		std::cout << C;
+	} catch (std::exception &e) {
 		std::cout << e.what() << " exception thrown\n";
-	}
-	catch (...) {
+	} catch (...) {
 		std::cout << "Default exception thrown\n";
 	}
 
-	std::cout << "Trying to increment Bureaucrat's grade of 1\n";
+	std::cout << "\nTrying to increment Bureaucrat's grade of 1\n";
 	try {
 		Bureaucrat D("D", 1);
 		std::cout << D;
 		D.incrementGrade();
-	}
-	catch (std::exception &e) {
-		std::cout << e.what() << "exception thrown\n";
-	}
-	catch (...) {
+	} catch (std::exception &e) {
+		std::cout << e.what() << " exception thrown\n";
+	} catch (...) {
 		std::cout << "Default exception thrown\n";
 	}
 	return (0);

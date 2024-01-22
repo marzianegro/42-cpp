@@ -3,15 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: ggiannit <ggiannit@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 10:33:41 by mnegro            #+#    #+#             */
-/*   Updated: 2023/12/28 15:39:16 by mnegro           ###   ########.fr       */
+/*   Updated: 2024/01/21 20:32:32 by ggiannit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AForm.hpp"
 #include "Bureaucrat.hpp"
+#include "Intern.hpp"
 #include <iostream>
 #include "PresidentialPardonForm.hpp"
 #include "RobotomyRequestForm.hpp"
@@ -19,70 +20,28 @@
 
 int	main(void)
 {
-    try {
-        std::cout << "\n---------- CONSTRUCTORS ----------" << std::endl;
-        Bureaucrat				Bob("Bob", 2);
-        Bureaucrat				John("John", 150);
-        ShrubberyCreationForm	FormA("Shrubbery");
-        RobotomyRequestForm		FormB("Robotomy");
-        PresidentialPardonForm	FormC("President");
+	std::cout << "---------- CONSTRUCTORS ----------\n";
+	Intern	someRandomIntern;
+	AForm	*SCForm;
+	AForm	*RRForm;
+	AForm	*PPForm;
+	AForm	*IEForm;
 
-        std::cout << "\n---------- \033[1;32mShrubbery OK\033[0m ----------" << std::endl;
-        Bob.signForm(FormA);
-        std::cout << std::endl;
-        Bob.executeForm(FormA);
-        std::cout << std::endl;
+	std::cout << "\n---------- \033[1;32mExisting Forms OK\033[0m ----------\n";
+	SCForm = someRandomIntern.makeForm("ShrubberyCreation", "Bender");
+	std::cout << "\n";
+	RRForm = someRandomIntern.makeForm("RobotomyRequest", "Bender");
+	std::cout << "\n";
+	PPForm = someRandomIntern.makeForm("PresidentialPardon", "Bender");
 
-        std::cout << "--------------- \033[1;32mRobotomy OK\033[0m---------------" << std::endl;
-        Bob.signForm(FormB);
-        std::cout << std::endl;
-        Bob.executeForm(FormB);
-        std::cout << std::endl;
-        Bob.executeForm(FormB);
-        std::cout << std::endl;
-        Bob.executeForm(FormB);
-        std::cout << std::endl;
-        Bob.executeForm(FormB);
-        std::cout << std::endl;
-        std::cout << "--------------- \033[1;32mPresidential Pardon OK\033[0m---------------" << std::endl;
-        Bob.signForm(FormC);
-        std::cout << std::endl;
-        Bob.executeForm(FormC);
-        std::cout << std::endl;
-        std::cout << "---------- DESTRUCTORS ----------" << std::endl;
-    } catch (std::exception &e) {
-        std::cout << e.what() << std::endl;
-    }
-	
-    try {
-        std::cout << "\n----------  CONSTRUCTORS ----------" << std::endl;
-        Bureaucrat				Bob("Bob", 2);
-        Bureaucrat				John("John", 150);
-        ShrubberyCreationForm	FormA("Shrubbery");
-        RobotomyRequestForm		FormB("Robotomy");
-        PresidentialPardonForm	FormC("President");
+	std::cout << "\n---------- \033[1;31mNon-Existent Form InternExploitation KO\033[0m ----------\n";
+	IEForm = someRandomIntern.makeForm("InternExploitation", "Bender");
+	std::cout << "\n";
+	(void)IEForm;
 
-        std::cout << "\n--------------- \033[1;31mShrubbery KO\033[0m ---------------" << std::endl;
-        FormA.setWhetherSigned(true);
-        Bob.signForm(FormA); // form is already signed
-        std::cout << std::endl;
-        John.executeForm(FormA); // bureaucrat's grade too low
-        std::cout << std::endl;
-        std::cout << "--------------- \033[1;31mRobotomy KO\033[0m---------------" << std::endl;
-        John.signForm(FormB); // bureaucrat's grade too low
-        std::cout << std::endl;
-        John.executeForm(FormB); // form is not signed
-        std::cout << std::endl;
-        std::cout << "--------------- \033[1;31mPresident Pardon KO\033[0m ---------------" << std::endl;
-        Bob.signForm(FormC); // form gets signed, so John can't
-        std::cout << std::endl;
-        John.signForm(FormC); // form is already signed
-        std::cout << std::endl;
-        John.executeForm(FormC); // bureaucrat's grade is too low
-        std::cout << std::endl;
-        std::cout << "---------- DESTRUCTORS ----------" << std::endl;
-    } catch (std::exception &e) {
-        std::cout << e.what() << std::endl;
-    }
+	std::cout << "---------- DESTRUCTORS ----------\n";
+	delete SCForm;
+	delete RRForm;
+	delete PPForm;
     return (0);
 }

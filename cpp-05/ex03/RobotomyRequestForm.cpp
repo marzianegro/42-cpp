@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   RobotomyRequestForm.cpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: ggiannit <ggiannit@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 12:03:45 by mnegro            #+#    #+#             */
-/*   Updated: 2023/12/28 15:10:46 by mnegro           ###   ########.fr       */
+/*   Updated: 2024/01/21 19:19:49 by ggiannit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,22 @@
 #include "RobotomyRequestForm.hpp"
 
 RobotomyRequestForm::RobotomyRequestForm() : AForm(), _target("randomPlace") {
-	std::cout << "RobotomyRequestForm default constructor called" << std::endl; 
+	std::cout << "RobotomyRequestForm default constructor called" << "\n";
+	srand(time(0));
 }
 
 RobotomyRequestForm::RobotomyRequestForm(std::string target) : AForm("RobotomyRequestForm", 72, 45), _target(target) {
-	std::cout << "RobotomyRequestForm parametric constructor called" << std::endl;
+	std::cout << "RobotomyRequestForm parametric constructor called" << "\n";
+	srand(time(0));
 }
 
 RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &src) : AForm(src), _target(src._target) {
-	std::cout << "RobotomyRequestForm copy constructor called" << std::endl;
+	std::cout << "RobotomyRequestForm copy constructor called" << "\n";
+	srand(time(0));
 };
 
 RobotomyRequestForm::~RobotomyRequestForm() {
-	std::cout << "RobotomyRequestForm destructor called" << std::endl;
+	std::cout << "RobotomyRequestForm destructor called" << "\n";
 }
 
 RobotomyRequestForm&	RobotomyRequestForm::operator=(const RobotomyRequestForm &src) {
@@ -39,12 +42,11 @@ RobotomyRequestForm&	RobotomyRequestForm::operator=(const RobotomyRequestForm &s
 
 void	RobotomyRequestForm::execute(Bureaucrat const &executor) const {
 	checkFormForExec(executor);
-	std::cout << "* LOUD AND UNBEARABLE DRILLING NOISE *" << std::endl;
-	srand(time(0));
+	std::cout << "* LOUD AND UNBEARABLE DRILLING NOISE *" << "\n";
 	int	n = rand();
 	if (n % 2 == 0) {
-		std::cout << "Oh well, " << this->_target << " has been successfully robotomized!" << std::endl;
+		std::cout << "Oh well, " << this->_target << " has been successfully robotomized!" << "\n";
 	} else {
-		std::cout << "Phew, " << this->_target << "'s robomy has failed!" << std::endl;
+		std::cout << "Phew, " << this->_target << "'s robomy has failed!" << "\n";
 	}
 }

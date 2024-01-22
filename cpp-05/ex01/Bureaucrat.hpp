@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: ggiannit <ggiannit@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 10:34:02 by mnegro            #+#    #+#             */
-/*   Updated: 2023/12/29 02:21:20 by mnegro           ###   ########.fr       */
+/*   Updated: 2024/01/21 18:30:17 by ggiannit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ public:
 
 	void	signForm(Form &obj);
 
+	// exceptions
 	class	GradeTooHighException : public std::exception {
 	
 	public:

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: ggiannit <ggiannit@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/25 15:35:21 by mnegro            #+#    #+#             */
-/*   Updated: 2023/12/29 02:21:12 by mnegro           ###   ########.fr       */
+/*   Updated: 2024/01/21 18:35:37 by ggiannit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ public:
 
 	void	beSigned(const Bureaucrat &obj);
 
+	// exceptions
 	class	GradeTooLowException : public std::exception {
 	
 	public:

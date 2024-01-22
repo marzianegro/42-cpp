@@ -3,29 +3,29 @@
 /*                                                        :::      ::::::::   */
 /*   PresidentialPardonForm.cpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: ggiannit <ggiannit@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 12:03:45 by mnegro            #+#    #+#             */
-/*   Updated: 2023/12/28 15:13:29 by mnegro           ###   ########.fr       */
+/*   Updated: 2024/01/21 18:52:09 by ggiannit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PresidentialPardonForm.hpp"
 
 PresidentialPardonForm::PresidentialPardonForm() : AForm(), _target("randomPlace") {
-	std::cout << "PresidentialPardonForm default constructor called" << std::endl; 
+	std::cout << "PresidentialPardonForm default constructor called" << "\n"; 
 }
 
 PresidentialPardonForm::PresidentialPardonForm(std::string target) : AForm("PresidentialPardonForm", 25, 5), _target(target) {
-	std::cout << "PresidentialPardonForm parametric constructor called" << std::endl;
+	std::cout << "PresidentialPardonForm parametric constructor called" << "\n";
 }
 
 PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &src) : AForm(src), _target(src._target) {
-	std::cout << "PresidentialPardonForm copy constructor called" << std::endl;
+	std::cout << "PresidentialPardonForm copy constructor called" << "\n";
 };
 
 PresidentialPardonForm::~PresidentialPardonForm() {
-	std::cout << "PresidentialPardonForm destructor called" << std::endl;
+	std::cout << "PresidentialPardonForm destructor called" << "\n";
 }
 
 PresidentialPardonForm&	PresidentialPardonForm::operator=(const PresidentialPardonForm &src) {
@@ -37,5 +37,5 @@ PresidentialPardonForm&	PresidentialPardonForm::operator=(const PresidentialPard
 
 void	PresidentialPardonForm::execute(Bureaucrat const &executor) const {
 	checkFormForExec(executor);
-	std::cout << this->_target << " has been pardoned by Zaphod Bebblebrox" << std::endl;
+	std::cout << this->_target << " has been pardoned by Zaphod Bebblebrox" << "\n";
 }

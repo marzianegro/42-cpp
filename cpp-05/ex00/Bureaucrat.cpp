@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: ggiannit <ggiannit@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 10:33:54 by mnegro            #+#    #+#             */
-/*   Updated: 2023/12/29 02:20:10 by mnegro           ###   ########.fr       */
+/*   Updated: 2024/01/21 18:29:56 by ggiannit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@ Bureaucrat::Bureaucrat() {
 
 Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name), _grade(grade) {
 	std::cout << "Bureaucrat parametric constructor called" << std::endl;
-	if (grade < 1)
+	if (grade < 1) {
 		throw GradeTooHighException();
-	else if (grade > 150)
+	} else if (grade > 150) {
 		throw GradeTooLowException();
-	return ;
+	}
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat &src) {
@@ -52,14 +52,16 @@ int	Bureaucrat::getGrade() const {
 
 void	Bureaucrat::incrementGrade() {
 	this->_grade--;
-	if (this->_grade < 1)
+	if (this->_grade < 1) {
 		throw GradeTooHighException();
+	}
 }
 
 void	Bureaucrat::decrementGrade() {
 	this->_grade++;
-	if (this->_grade > 150)
+	if (this->_grade > 150) {
 		throw GradeTooLowException();
+	}
 }
 
 std::ostream& operator<<(std::ostream &os, const Bureaucrat &obj) {

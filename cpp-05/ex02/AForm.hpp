@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AForm.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: ggiannit <ggiannit@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/25 15:35:21 by mnegro            #+#    #+#             */
-/*   Updated: 2023/12/28 15:31:49 by mnegro           ###   ########.fr       */
+/*   Updated: 2024/01/21 18:48:36 by ggiannit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ public:
 	void			checkFormForExec(Bureaucrat const &executor) const;
 	virtual void	execute(Bureaucrat const &executor) const = 0;
 
+	// exceptions
 	class	GradeTooLowException : public std::exception {
 
 	public:

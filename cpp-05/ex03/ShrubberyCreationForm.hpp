@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: ggiannit <ggiannit@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 12:03:36 by mnegro            #+#    #+#             */
-/*   Updated: 2023/12/29 02:26:43 by mnegro           ###   ########.fr       */
+/*   Updated: 2024/01/21 18:53:07 by ggiannit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 class	ShrubberyCreationForm : public AForm {
 
 public:
-	ShrubberyCreationForm(); // ocf constructor
+	ShrubberyCreationForm(); // ocf default constructor
 	ShrubberyCreationForm(std::string target);
 	ShrubberyCreationForm(const ShrubberyCreationForm &src); // ocf copy constructor
 	~ShrubberyCreationForm(); // ocf destructor

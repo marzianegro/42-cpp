@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Harl.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: ggiannit <ggiannit@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 16:33:51 by mnegro            #+#    #+#             */
-/*   Updated: 2023/12/12 11:00:35 by mnegro           ###   ########.fr       */
+/*   Updated: 2024/01/21 19:57:09 by ggiannit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ Harl::~Harl() {
 	of pointers to member functions. You can then index into the table to call
 	the appropriate function. */
 void	Harl::complain(std::string level) {
-	MemFn		complaintFn[4] = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
 	std::string	complaintLvl[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+	MemFn		complaintFn[4] = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
 
 	for (int i = 0; i < 4; i++) {
 		if (level.compare(complaintLvl[i]) == 0) {
