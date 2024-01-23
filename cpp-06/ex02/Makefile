@@ -6,7 +6,7 @@
 #    By: mnegro <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/24 18:25:00 by mnegro            #+#    #+#              #
-#    Updated: 2024/01/23 15:01:15 by mnegro           ###   ########.fr        #
+#    Updated: 2024/01/23 15:17:09 by mnegro           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ CFLAGS = -Wall -Wextra -Werror -std=c++98
 RM = rm -f
 
 #### TARGETS ####
-SRCS = main.cpp ScalarConvert.cpp
+SRCS = Base.cpp main.cpp 
 
 OBJS = ${SRCS:.cpp=.o}
 

@@ -1,17 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   A.hpp                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/23 14:42:43 by mnegro            #+#    #+#             */
-/*   Updated: 2024/01/23 14:59:58 by mnegro           ###   ########.fr       */
+/*   Created: 2024/01/23 15:13:07 by mnegro            #+#    #+#             */
+/*   Updated: 2024/01/23 15:15:43 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScalarConverter.hpp"
+#pragma once
 
-int	main(void) {
-	return (0);
-}
+#include "Base.hpp"
+
+class	A : public Base {
+
+public:
+	A(); // ocf default constructor
+	A(const A &src); // ocf copy constructor
+	~A(); // ocf destructor
+
+	A&	operator=(const A &src); // ocf copy assignment operator
+
+private:
+
+};
