@@ -6,7 +6,7 @@
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 14:56:29 by mnegro            #+#    #+#             */
-/*   Updated: 2024/02/02 19:02:49 by mnegro           ###   ########.fr       */
+/*   Updated: 2024/02/02 20:29:08 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@ ScalarConverter&	ScalarConverter::operator=(const ScalarConverter &src) {
 }
 
 void	ScalarConverter::convert(std::string literal) {
-	CheckFn	isWhat[4] = {ScalarConverter::isChar, ScalarConverter::isInt, ScalarConverter::isFloat, ScalarConverter::isDouble};
-	ConvertFn	fromWhat[4] = {ScalarConverter::fromChar, ScalarConverter::fromInt, ScalarConverter::fromFloat, ScalarConverter::fromDouble};
+	CheckFn	isWhat[4] = {ScalarConverter::isChar, ScalarConverter::isInt, ScalarConverter::isDouble, ScalarConverter::isFloat};
+	ConvertFn	fromWhat[4] = {ScalarConverter::fromChar, ScalarConverter::fromInt, ScalarConverter::fromDouble, ScalarConverter::fromFloat};
 
 	for (int i = 0; i < 4; i++) {
 		if (isWhat[i](literal)) {
@@ -41,7 +41,7 @@ void	ScalarConverter::convert(std::string literal) {
 			return ;
 		}
 	}
-	std::cout << "Error: invalid type literal\n";
+	std::cout << "\033[1;31mERROR\033[0m The literal provided either contains invalid characters, or is a number far beyond the range of both float and double. Please, try again!\n";
 	return ;
 }
 
@@ -64,6 +64,7 @@ bool	ScalarConverter::isFloat(std::string const &literal) {
 	std::string	literalCopy;
 	float	tryFloat;
 
+	// check for literals not ending in 'f'
 	if (literal[literal.length() - 1] != 'f') {
 		return (false);
 	} else {

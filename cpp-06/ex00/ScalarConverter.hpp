@@ -6,12 +6,13 @@
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 14:50:16 by mnegro            #+#    #+#             */
-/*   Updated: 2024/02/02 19:00:26 by mnegro           ###   ########.fr       */
+/*   Updated: 2024/02/02 19:35:19 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
+#include <cmath>
 #include <iomanip>
 #include <iostream>
 #include <limits>
