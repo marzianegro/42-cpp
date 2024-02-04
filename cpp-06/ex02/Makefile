@@ -6,7 +6,7 @@
 #    By: mnegro <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/24 18:25:00 by mnegro            #+#    #+#              #
-#    Updated: 2024/01/23 15:17:09 by mnegro           ###   ########.fr        #
+#    Updated: 2024/02/04 18:06:33 by mnegro           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@
 .SILENT:
 
 ### VARIABLES (DEFINITION) ###
-NAME = forms
+NAME = identify
 
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
