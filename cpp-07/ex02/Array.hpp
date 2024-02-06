@@ -6,7 +6,7 @@
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 15:59:21 by mnegro            #+#    #+#             */
-/*   Updated: 2024/02/06 10:23:27 by mnegro           ###   ########.fr       */
+/*   Updated: 2024/02/06 11:41:09 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ public:
 	
 	public:
 		const char* what() const throw() {
-       		return "Index is out of array's bounds\n";
+       		return ("Index is out of array's bounds\n");
 		}
 	};
 

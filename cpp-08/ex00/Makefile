@@ -6,7 +6,7 @@
 #    By: mnegro <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/24 18:25:00 by mnegro            #+#    #+#              #
-#    Updated: 2024/02/06 10:29:46 by mnegro           ###   ########.fr        #
+#    Updated: 2024/02/06 11:32:04 by mnegro           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,14 +17,14 @@
 .SILENT:
 
 ### VARIABLES (DEFINITION) ###
-NAME = array
+NAME = easyfind
 
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 RM = rm -f
 
 #### TARGETS ####
-SRCS = main.cpp 
+SRCS = main.cpp
 
 OBJS = ${SRCS:.cpp=.o}
 
