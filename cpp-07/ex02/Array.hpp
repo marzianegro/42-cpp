@@ -6,7 +6,7 @@
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 15:59:21 by mnegro            #+#    #+#             */
-/*   Updated: 2024/02/05 17:56:14 by mnegro           ###   ########.fr       */
+/*   Updated: 2024/02/06 10:23:27 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,11 +50,20 @@ public:
 		return (_size);
 	}
 
+	/*	The operator[] returns a reference to the element of type
+		T at the specified index, not a reference to the Array itself. */
+	T&	operator[](size_t index) {
+		if (index >= _size) {
+			throw Array::OutOfBoundsException();
+		}
+		return _arr[index];
+	}
+
 	// exceptions
 	class	OutOfBoundsException : public std::exception {
 	
 	public:
-		virtual const char* what() const throw() {
+		const char* what() const throw() {
        		return "Index is out of array's bounds\n";
 		}
 	};
