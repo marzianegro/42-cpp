@@ -71,7 +71,8 @@
 		"type_traits": "cpp",
 		"utility": "cpp",
 		"ranges": "cpp",
-		"span": "cpp"
+		"span": "cpp",
+		"stack": "cpp"
 	},
 	"vscode-pets.throwBallWithMouse": true
 }
