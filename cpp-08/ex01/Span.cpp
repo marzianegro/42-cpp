@@ -6,7 +6,7 @@
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 11:43:11 by mnegro            #+#    #+#             */
-/*   Updated: 2024/02/06 12:44:16 by mnegro           ###   ########.fr       */
+/*   Updated: 2024/02/06 16:41:52 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,14 +31,15 @@ Span::~Span() {
 
 Span&	Span::operator=(const Span &src) {
 	if (this != &src) {
-		_spanVec = src._spanVec;
+		this->_spanVec = src._spanVec;
+		this->_maxSize = src._maxSize;
 	}
 	return (*this);
 }
 
 void	Span::addNumber(int nbr) {
 	if (_spanVec.size() == _maxSize) {
-		throw Span::SpanAtMaxSize();
+		throw Span::SpanAtMaxSizeException();
 	} else {
 		_spanVec.push_back(nbr);
 	}
@@ -46,7 +47,7 @@ void	Span::addNumber(int nbr) {
 
 int	Span::shortestSpan() {
 	if (_spanVec.empty() || _spanVec.size() == 1) {
-		throw Span::NoSpanFound();
+		throw Span::NoSpanFoundException();
 	}
 	std::sort(_spanVec.begin(), _spanVec.end());
 	int	shortestSpan = _spanVec[1] - _spanVec[0];
@@ -61,7 +62,7 @@ int	Span::shortestSpan() {
 
 int	Span::longestSpan() {
 	if (_spanVec.empty() || _spanVec.size() == 1) {
-		throw Span::NoSpanFound();
+		throw Span::NoSpanFoundException();
 	}
 	int	min = *std::min_element(_spanVec.begin(), _spanVec.end());
 	int	max = *std::max_element(_spanVec.begin(), _spanVec.end());
