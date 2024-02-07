@@ -6,7 +6,7 @@
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 16:43:08 by mnegro            #+#    #+#             */
-/*   Updated: 2024/02/06 18:48:03 by mnegro           ###   ########.fr       */
+/*   Updated: 2024/02/07 11:14:16 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,19 +23,30 @@ template <typename T>
 class	MutantStack : public std::stack<T> {
 
 public:
-	MutantStack() {};// ocf default constructor
-	MutantStack(const MutantStack &src) { // ocf copy constructor
-		*this = src;
-	};
-	~MutantStack() {}; // ocf destructor
+	MutantStack() : std::stack<T>() {};// ocf default constructor
+	MutantStack(const MutantStack &src) : std::stack<T>(src) {};// ocf copy constructor
+	virtual ~MutantStack() {}; // ocf destructor
 
 	MutantStack&	operator=(const MutantStack &src) { // ocf copy assignment operator
 		if (this != &src) {
+			std::stack<T>::operator=(src);
 		}
 		return (*this);
 	};
 
-	void	iteratos();
+	typedef typename std::stack<T>::container_type::iterator		iterator;
+	typedef typename std::stack<T>::container_type::const_iterator	const_iterator;
 
-private:
+	iterator	begin() {
+		return (std::stack<T>::c.begin());
+	}
+	iterator	end() {
+		return (std::stack<T>::c.end());
+	}
+	const_iterator	cbegin() const {
+		return (std::stack<T>::c.begin());
+	}
+	const_iterator	cend() const {
+		return (std::stack<T>::c.end());
+	}
 };
