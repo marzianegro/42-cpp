@@ -6,7 +6,7 @@
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 10:30:09 by mnegro            #+#    #+#             */
-/*   Updated: 2024/02/06 11:41:58 by mnegro           ###   ########.fr       */
+/*   Updated: 2024/02/07 15:45:12 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #include <iostream>
 #include <vector>
 
-class	NoOccurenceFound : public std::exception {
+class	NoOccurenceFoundException : public std::exception {
 
 public:
 	const char* what() const throw() {
@@ -31,6 +31,6 @@ typename	T::iterator easyfind(T& container, int value) {
 	if (iter != container.end()) {
 		return (iter);
 	} else {
-		throw NoOccurenceFound();
+		throw NoOccurenceFoundException();
 	}
 }
