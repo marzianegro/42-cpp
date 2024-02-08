@@ -6,7 +6,7 @@
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 15:48:47 by mnegro            #+#    #+#             */
-/*   Updated: 2024/02/07 16:39:26 by mnegro           ###   ########.fr       */
+/*   Updated: 2024/02/08 16:44:58 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,14 @@ bool	checkArgs(int ac, char **av)
 		return (false);
 	}
 	std::ifstream	file(av[1]);
+	std::string	line;
 	if (!file.is_open()) {
-		std::cout << "\033[1;31mERROR\033[0m " << av[1] << " can't be opened" << std::endl;
+		std::cout << "\033[1;31mERROR\033[0m File '" << av[1] << "' can't be opened" << std::endl;
+		return (false);
+	}
+	std::getline(file, line);
+	if (line.compare("data | value")) {
+		std::cout << "\033[1;31mERROR\033[0m Missing header column in TXT file" << std::endl;
 		return (false);
 	}
 	file.close();
@@ -31,8 +37,10 @@ int	main(int ac, char **av) {
 	if (!checkArgs(ac, av)) {
 		return (1);
 	}
-	std::string		evalsFile = av[1];
-	std::ifstream	infile(evalsFile.c_str());
+	const std::string		txtFile = av[1];
+	const std::string		csvFile = "data.csv";
 
-	infile.close();
+	BitcoinExchange	btc;
+	btc.storeRates(csvFile);
+	btc.matchEvals(txtFile);
 }
