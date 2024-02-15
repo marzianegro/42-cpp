@@ -6,7 +6,7 @@
 #    By: mnegro <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/24 18:25:00 by mnegro            #+#    #+#              #
-#    Updated: 2024/02/07 15:51:58 by mnegro           ###   ########.fr        #
+#    Updated: 2024/02/15 16:59:17 by mnegro           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,11 +20,11 @@
 NAME = PmergeMe
 
 CC = c++
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+CFLAGS = -Wall -Wextra -Werror -std=c++98 -g
 RM = rm -f
 
 #### TARGETS ####
-SRCS = main.cpp
+SRCS = main.cpp PmergeMe.cpp
 
 OBJS = ${SRCS:.cpp=.o}
 
