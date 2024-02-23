@@ -6,7 +6,7 @@
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 15:41:06 by mnegro            #+#    #+#             */
-/*   Updated: 2024/02/23 11:20:46 by mnegro           ###   ########.fr       */
+/*   Updated: 2024/02/23 17:02:36 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,3 +35,41 @@ int	main() {
     std::cout << '\n';
     return (0);
 }
+
+//// Evalutation Sheet Test ex01.cpp)
+// class   Awesome {
+
+// public:
+// 	Awesome(void) : _n(42) {
+//         return ;
+//     }
+
+// 	int get(void) const { 
+//         return (this->_n);
+//     }
+
+// private:
+// 	int _n;
+// };
+
+// std::ostream&   operator<<(std::ostream &o, Awesome const &rhs) {
+//   o << rhs.get();
+//   return (o);
+// }
+
+// template <typename T>
+// void	print(T &x) {
+// 	std::cout << x << " ";
+// 	return ;
+// }
+
+// int main(void) {
+// 	int tab[] = {0, 1, 2, 3, 4};
+// 	Awesome tab2[5];
+
+// 	::iter(tab, 5, print<const int>); // make iter function for const values?
+//     std::cout << '\n';
+// 	::iter(tab2, 5, print<Awesome>);
+//     std::cout << '\n';
+// 	return (0);
+// }
