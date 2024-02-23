@@ -6,7 +6,7 @@
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 10:33:41 by mnegro            #+#    #+#             */
-/*   Updated: 2024/02/23 10:01:55 by mnegro           ###   ########.fr       */
+/*   Updated: 2024/02/23 10:33:21 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ int	main(void)
 	std::cout << "----------" << "\n";
 	std::cout << "Attempting to sign -> " << B97 << "\n";
 	B.signForm(B97);
-	std::cout << "Form B97 successfully signed by " << B;
+	std::cout << "Form B97 signing failed by " << B;
 	std::cout << "----------" << "\n";
 	std::cout << "---------------------" << "\n";
 	return (0);
