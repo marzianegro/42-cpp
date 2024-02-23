@@ -6,7 +6,7 @@
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 12:03:45 by mnegro            #+#    #+#             */
-/*   Updated: 2024/01/23 14:44:19 by mnegro           ###   ########.fr       */
+/*   Updated: 2024/02/23 10:10:59 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,9 @@ ShrubberyCreationForm&	ShrubberyCreationForm::operator=(const ShrubberyCreationF
 };
 
 void	ShrubberyCreationForm::execute(Bureaucrat const &executor) const {
-	(void)executor;
+	checkFormForExec(executor);
 	std::string		filename = this->_target + "_shrubbery";
-	std::ofstream	file(filename);
+	std::ofstream	file(filename.c_str());
 	if (!file.is_open()) {
         std::cout << "Error: can't create file" << "\n";
         return ;
