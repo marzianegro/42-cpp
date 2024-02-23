@@ -6,15 +6,15 @@
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 15:02:02 by mnegro            #+#    #+#             */
-/*   Updated: 2024/02/04 16:47:34 by mnegro           ###   ########.fr       */
+/*   Updated: 2024/02/23 10:47:33 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include <cstdint>
 #include "Data.hpp"
 #include <iostream>
+#include <stdint.h>
 
 class	Serializer {
 
