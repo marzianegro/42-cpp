@@ -6,7 +6,7 @@
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 14:56:29 by mnegro            #+#    #+#             */
-/*   Updated: 2024/02/08 16:32:38 by mnegro           ###   ########.fr       */
+/*   Updated: 2024/02/23 15:32:05 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ ScalarConverter&	ScalarConverter::operator=(const ScalarConverter &src) {
 }
 
 void	ScalarConverter::convert(std::string literal) {
-	CheckFn	isWhat[4] = {ScalarConverter::isChar, ScalarConverter::isInt, ScalarConverter::isDouble, ScalarConverter::isFloat};
+	CheckFn		isWhat[4] = {ScalarConverter::isChar, ScalarConverter::isInt, ScalarConverter::isDouble, ScalarConverter::isFloat};
 	ConvertFn	fromWhat[4] = {ScalarConverter::fromChar, ScalarConverter::fromInt, ScalarConverter::fromDouble, ScalarConverter::fromFloat};
 
 	for (int i = 0; i < 4; i++) {
@@ -41,7 +41,24 @@ void	ScalarConverter::convert(std::string literal) {
 			return ;
 		}
 	}
-	std::cout << "\033[1;31mERROR\033[0m The literal provided either contains invalid characters, or is a number far beyond the range of both float and double. Please, try again!\n";
+	if (literal == "+inf" || literal == "+inff") {
+		std::cout << "char: impossible\n";
+		std::cout << "int: impossible\n";
+		std::cout << "float: +inff\n";
+		std::cout << "double: +inf\n";
+	} else if  (literal == "-inf" || literal == "-inff") {
+		std::cout << "char: impossible\n";
+		std::cout << "int: impossible\n";
+		std::cout << "float: -inff\n";
+		std::cout << "double: -inf\n";
+	} else if (literal == "nan" || literal == "nanf") {
+		std::cout << "char: impossible\n";
+		std::cout << "int: impossible\n";
+		std::cout << "float: nanf\n";
+		std::cout << "double: nan\n";
+	} else {
+		std::cout << "\033[1;31mERROR\033[0m The literal provided either contains invalid characters, or is a number far beyond the range of both float and double. Please, try again!\n";
+	}
 	return ;
 }
 
