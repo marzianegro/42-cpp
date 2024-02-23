@@ -6,7 +6,7 @@
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 10:33:41 by mnegro            #+#    #+#             */
-/*   Updated: 2024/01/23 14:43:02 by mnegro           ###   ########.fr       */
+/*   Updated: 2024/02/23 12:27:53 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,10 @@ int	main(void)
 	std::cout << "\nTrying to create a Bureaucrat of grade 76 and increment it by 75\n";
 	try {
 		Bureaucrat B("B", 76);
-		for (int i = 0; i > 77; i++) {
+		for (int i = 0; i < 75; i++) {
 			B.incrementGrade();
 		}
-		std::cout << "Bureaucrat's grade 76 incremented to grade 1\n";
+		std::cout << B;
 	} catch (std::exception &e) {
 		std::cout << e.what() << " exception thrown\n";
 	} catch (...) {
