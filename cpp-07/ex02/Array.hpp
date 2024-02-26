@@ -6,7 +6,7 @@
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 15:59:21 by mnegro            #+#    #+#             */
-/*   Updated: 2024/02/23 11:22:18 by mnegro           ###   ########.fr       */
+/*   Updated: 2024/02/26 17:17:17 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,3 +72,17 @@ private:
 	T*	_arr;
 	size_t	_size;
 };
+
+template <typename T>
+std::ostream	&operator<<(std::ostream &os, Array<T> &src) {
+	os << "[";
+	for (size_t i = 0; i < src.size(); i++) {
+		if (i != src.size() - 1) {
+			os << src[i] << ", ";
+		} else {
+			os << src[i];
+		}
+	}
+	os << "]";
+	return (os);
+}

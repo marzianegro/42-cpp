@@ -6,33 +6,25 @@
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 15:41:06 by mnegro            #+#    #+#             */
-/*   Updated: 2024/02/23 17:02:36 by mnegro           ###   ########.fr       */
+/*   Updated: 2024/02/26 16:36:56 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "iter.hpp"
 
-void increment(int& n) {
-    n++;
-}
-
 int	main() {
     int	arr[] = {1, 2, 3, 4, 5};
     size_t	len = sizeof(arr) / sizeof(int);
 
-    std::cout << "Before incrementing: ";
-    for (size_t i = 0; i < len; i++) {
-        std::cout << arr[i] << ' ';
-    }
+    std::cout << "Before incrementing:\n";
+    ::iter(arr, len, ::somethingFun<const int>);
     std::cout << '\n';
 
-    ::iter(arr, len, ::increment<int>);
-
-    std::cout << "After incrementing: ";
     for (size_t i = 0; i < len; i++) {
-        std::cout << arr[i] << ' ';
+        arr[i] += 1;
     }
-    std::cout << '\n';
+    std::cout << "After incrementing:\n";
+    ::iter(arr, len, ::somethingFun<const int>);
     return (0);
 }
 
@@ -58,7 +50,7 @@ int	main() {
 // }
 
 // template <typename T>
-// void	print(T &x) {
+// void	print(T const &x) {
 // 	std::cout << x << " ";
 // 	return ;
 // }
@@ -67,7 +59,7 @@ int	main() {
 // 	int tab[] = {0, 1, 2, 3, 4};
 // 	Awesome tab2[5];
 
-// 	::iter(tab, 5, print<const int>); // make iter function for const values?
+// 	::iter(tab, 5, print<const int>);
 //     std::cout << '\n';
 // 	::iter(tab2, 5, print<Awesome>);
 //     std::cout << '\n';
