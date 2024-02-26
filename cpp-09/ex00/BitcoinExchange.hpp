@@ -6,12 +6,13 @@
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 15:48:56 by mnegro            #+#    #+#             */
-/*   Updated: 2024/02/08 16:40:13 by mnegro           ###   ########.fr       */
+/*   Updated: 2024/02/26 17:26:39 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
+#include <cstdlib>
 #include <fstream>
 #include <iostream>
 #include <map>
