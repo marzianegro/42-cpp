@@ -73,7 +73,9 @@
 		"ranges": "cpp",
 		"span": "cpp",
 		"stack": "cpp",
-		"regex": "cpp"
+		"regex": "cpp",
+		"list": "cpp",
+		"numbers": "cpp"
 	},
 	"vscode-pets.throwBallWithMouse": true
 }

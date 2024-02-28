@@ -6,7 +6,7 @@
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 11:42:54 by mnegro            #+#    #+#             */
-/*   Updated: 2024/02/07 11:41:33 by mnegro           ###   ########.fr       */
+/*   Updated: 2024/02/28 10:54:52 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,15 +53,22 @@ public:
 			return ("Span is already at maximum size");
 		}
 	};
-	class	NoSpanFoundException : public std::exception {
+	class	EmptySpanException : public std::exception {
 
 	public:
 		const char* what() const throw() {
-			return ("No span was found");
+			return ("Span is empty");
+		}
+	};
+	class	SizeOneSpanException : public std::exception {
+
+	public:
+		const char* what() const throw() {
+			return ("Span is of size 1");
 		}
 	};
 
 private:
 	std::vector<int>	_spanVec;
-	unsigned int	_maxSize;
+	unsigned int		_maxSize;
 };
