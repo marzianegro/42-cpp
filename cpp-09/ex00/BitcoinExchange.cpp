@@ -6,7 +6,7 @@
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 15:49:04 by mnegro            #+#    #+#             */
-/*   Updated: 2024/02/09 10:53:52 by mnegro           ###   ########.fr       */
+/*   Updated: 2024/02/28 14:49:44 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,10 +66,16 @@ void	BitcoinExchange::matchEvals(const std::string &filename) {
 
 		// find exact or closest lower date in _btcExc
 		if (std::getline(iss, date, '|') && iss >> value) {
+			for (size_t i = 0; i < date.length(); i++) {
+				if (date[i] == ' ') {
+					date = date.substr(0, i);
+				}
+			}
 			if (_btcExc.find(date) == _btcExc.end()) {
 				it = _btcExc.upper_bound(date);
 				if (it != _btcExc.begin()) {
-					--it; // found closest lower date in _btcExc
+					--it; // found nearest lower date in _btcExc
+					// std::cout << "Nearest lower date found: " << it->first << '\n';
 				} else {
 					std::cout << "\033[1;31mERROR\033[0m No date lower than: " << date << '\n';
 					continue ;

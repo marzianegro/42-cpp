@@ -6,7 +6,7 @@
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 15:48:56 by mnegro            #+#    #+#             */
-/*   Updated: 2024/02/26 17:26:39 by mnegro           ###   ########.fr       */
+/*   Updated: 2024/02/28 14:48:43 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,8 @@ public:
 	void	storeRates(const std::string &filename);
 	void	matchEvals(const std::string &filename);
 
-	// exceptions
-
 private:
-	std::string	_date;
-	double		_value; // can store both int and float
+	std::string						_date;
+	double							_value; // can store both int and float
 	std::map<std::string, double>	_btcExc; // stores date and converted value
 };
