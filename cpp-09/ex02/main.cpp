@@ -6,7 +6,7 @@
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 16:41:06 by mnegro            #+#    #+#             */
-/*   Updated: 2024/02/28 10:17:39 by mnegro           ###   ########.fr       */
+/*   Updated: 2024/02/28 15:21:23 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,6 @@
 void	checkArgs(int ac) {
 	if (ac < 2) {
 		std::cout << "\033[1;31mERROR\033[0m Invalid number of arguments\n";
-		exit(1);
-	} else if (ac < 3) {
-		std::cout << "\033[1;31mERROR\033[0m Not enough numbers to sort\n";
 		exit(1);
 	}
 }
@@ -57,3 +54,11 @@ int	main(int ac, char **av) {
 	std::cout << "Time to process a range of " << ac - 1 << " elements with \033[1;35mstd::vector\033[0m: " << vecTime << " milliseconds\n";
 	return (0);
 }
+
+/*
+Tests from subject:
+	3 5 9 7 4
+	'shuf -i 1-100000 -n 3000 | tr "\n" " "'
+	"-1" "-2" > Error
+	'shuf -i 1-1000 -n 3000 | tr "\n" " "'
+*/

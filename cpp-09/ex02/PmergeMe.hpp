@@ -6,7 +6,7 @@
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 16:41:30 by mnegro            #+#    #+#             */
-/*   Updated: 2024/02/26 17:28:32 by mnegro           ###   ########.fr       */
+/*   Updated: 2024/02/28 15:11:17 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,8 +63,8 @@ public:
 	};
 
 private:
-	std::deque<int>		_deqInt;
-	std::vector<int>	_vecInt;
+	std::deque<int>		_intDeq;
+	std::vector<int>	_intVec;
 };
 
 template <typename T>

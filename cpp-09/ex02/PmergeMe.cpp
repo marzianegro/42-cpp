@@ -6,7 +6,7 @@
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 16:41:22 by mnegro            #+#    #+#             */
-/*   Updated: 2024/02/15 17:32:58 by mnegro           ###   ########.fr       */
+/*   Updated: 2024/02/28 15:21:22 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,18 +24,18 @@ PmergeMe::~PmergeMe() {
 
 PmergeMe&	PmergeMe::operator=(const PmergeMe &src) {
 	if (this != &src) {
-		this->_deqInt = src._deqInt;
-		this->_vecInt = src._vecInt;
+		this->_intDeq = src._intDeq;
+		this->_intVec = src._intVec;
 	}
 	return (*this);
 }
 
 std::deque<int>	PmergeMe::getDeq() {
-	return (_deqInt);
+	return (_intDeq);
 }
 
 std::vector<int>	PmergeMe::getVec() {
-	return (_vecInt);
+	return (_intVec);
 }
 
 bool	PmergeMe::isUInt(std::string const &str) {
@@ -58,7 +58,7 @@ void	PmergeMe::fillDeq(char **av) {
 			if (!isUInt(str)) {
 				throw InvalidSequenceException();
 			} else {
-				_deqInt.push_back(std::atoi(av[i]));
+				_intDeq.push_back(std::atoi(av[i]));
 			}
 		}
 	} catch (std::exception &e) {
@@ -73,7 +73,7 @@ void	PmergeMe::fillVec(char **av) {
 			if (!isUInt(str)) {
 				throw InvalidSequenceException();
 			} else {
-				_vecInt.push_back(std::atoi(av[i]));
+				_intVec.push_back(std::atoi(av[i]));
 			}
 		}
 	} catch (std::exception &e) {

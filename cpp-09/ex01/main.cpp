@@ -6,7 +6,7 @@
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 16:40:20 by mnegro            #+#    #+#             */
-/*   Updated: 2024/02/26 17:26:39 by mnegro           ###   ########.fr       */
+/*   Updated: 2024/02/28 15:05:36 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,15 @@ RPN invalid expressions to test error handling:
 	"1 5 + 8 7" > Incomplete RPN expression
 	"1 + 1" > RPN order not respected
 	"3 -" > Incomplete RPN expression
+RPN expressions from the subject:
+	"8 9 * 9 - 9 - 9 - 4 - 1 +" outputs 42
+	"7 7 * 7 -" outputs 42
+	"1 2 * 2 / 2 * 2 4 - +" outputs 0
+	"(1 + 1)" > Element is not an operand nor operator
+RPN expressions from the evaluation sheet:
+	"8 9 * 9 - 9 - 9 - 4 - 1 +" outputs 42
+	"9 8 * 4 * 4 / 2 + 9 - 8 - 8 - 1 - 6 -" outputs 42
+	"1 2 * 2 / 2 + 5 * 6 - 1 3 * - 4 5 * * 8 /" outputs 15
 
 Website to check result:
 	https://rpn.startkoden.com/
