@@ -6,7 +6,7 @@
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 15:49:04 by mnegro            #+#    #+#             */
-/*   Updated: 2024/02/28 14:52:02 by mnegro           ###   ########.fr       */
+/*   Updated: 2024/02/29 18:41:40 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	BitcoinExchange::storeRates(const std::string &filename) {
 	std::getline(infile, line);
 	if (line.compare("date,exchange_rate")) {
 		std::cout << "\033[1;31mERROR\033[0m Missing header column in CSV file" << std::endl;
-		return ;
+		exit(EXIT_FAILURE);
 	}
 	while (std::getline(infile, line)) {
 		std::istringstream	iss(line);
@@ -64,7 +64,7 @@ void	BitcoinExchange::matchEvals(const std::string &filename) {
 		double									value;
 		double									result;
 
-		// find exact or closest lower date in _btcExc
+		// find exact or nearest lower date in _btcExc
 		if (std::getline(iss, date, '|') && iss >> value) {
 			for (size_t i = 0; i < date.length(); i++) {
 				if (date[i] == ' ') {
@@ -91,7 +91,7 @@ void	BitcoinExchange::matchEvals(const std::string &filename) {
 			std::cout << "\033[1;31mERROR\033[0m Value out of range: " << value << '\n';
 		} else {
 			result = value * it->second;
-			std::cout << date << "=> " << value << " = " << result << '\n';
+			std::cout << date << " => " << value << " = " << result << '\n';
 		}
 	}
 }

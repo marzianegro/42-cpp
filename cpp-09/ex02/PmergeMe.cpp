@@ -6,7 +6,7 @@
 /*   By: mnegro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 16:41:22 by mnegro            #+#    #+#             */
-/*   Updated: 2024/02/28 15:31:41 by mnegro           ###   ########.fr       */
+/*   Updated: 2024/02/29 18:58:58 by mnegro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,32 +52,24 @@ bool	PmergeMe::isUInt(std::string const &str) {
 }
 
 void	PmergeMe::fillDeq(char **av) {
-	try {
-		for (int i = 1; av[i]; i++) {
-			std::string	str(av[i]);
-			if (!isUInt(str)) {
-				throw InvalidSequenceException();
-			} else {
-				_intDeq.push_back(std::atoi(av[i]));
-			}
+	for (int i = 1; av[i]; i++) {
+		std::string	str(av[i]);
+		if (!isUInt(str)) {
+			throw InvalidSequenceException();
+		} else {
+			_intDeq.push_back(std::atoi(av[i]));
 		}
-	} catch (std::exception &e) {
-		std::cout << "\033[1;31mERROR\033[0m " << e.what();
 	}
 }
 
 void	PmergeMe::fillVec(char **av) {
-	try {
-		for (int i = 1; av[i]; i++) {
-			std::string	str(av[i]);
-			if (!isUInt(str)) {
-				throw InvalidSequenceException();
-			} else {
-				_intVec.push_back(std::atoi(av[i]));
-			}
+	for (int i = 1; av[i]; i++) {
+		std::string	str(av[i]);
+		if (!isUInt(str)) {
+			throw InvalidSequenceException();
+		} else {
+			_intVec.push_back(std::atoi(av[i]));
 		}
-	} catch (std::exception &e) {
-		std::cout << "\033[1;31mERROR\033[0m " << e.what();
 	}
 }
 
